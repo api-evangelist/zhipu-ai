@@ -5,37 +5,113 @@ provider: Zhipu AI
 providerId: zhipu-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - GLM
-- ChatGLM
 - Plans
-description: Placeholder plans/pricing artifact for Zhipu AI. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: >-
+  Z.ai offers two commercial models: pay-as-you-go API consumption priced per million tokens
+  per model, and the GLM Coding Plan subscription with usage allowances. Free tiers exist for
+  GLM-4.7-Flash, GLM-4.5-Flash, and several vision models.
+notes: >-
+  Pricing as of May 2026 - GLM-5.1 is the highest at $1.40/M input tokens, GLM-4.7-FlashX at
+  $0.07/M, GLM-OCR at $0.03/M. Image gen $0.01-$0.015 per image, video $0.20-$0.40 per video,
+  web search $0.01 per call, audio transcription $0.03/M tokens, agents $0.20-$3.00/M tokens.
 sources:
-- https://www.zhipuai.cn/
+- https://docs.z.ai/guides/overview/pricing
+- https://docs.z.ai/devpack/overview
 plans:
-- id: zhipu-ai-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: zhipu-ai-pay-as-you-go
+  name: Pay As You Go
+  type: usage
+  description: Per-token consumption billed against prepaid balance for API users.
   entries:
-  - label: API Access
-    name: api_access
-    type: flat
-    metric: varies
+  - label: Chat Completions Input/Output
+    name: chat_tokens
+    type: usage
+    metric: tokens
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1000000
+    price: see https://docs.z.ai/guides/overview/pricing
+    userMultiplied: false
+  - label: Image Generation
+    name: image_count
+    type: usage
+    metric: images
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://www.zhipuai.cn/
+    price: '0.01-0.015 USD per image'
+    userMultiplied: false
+  - label: Video Generation
+    name: video_count
+    type: usage
+    metric: videos
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: '0.20-0.40 USD per video'
+    userMultiplied: false
+  - label: Web Search Tool
+    name: web_search
+    type: usage
+    metric: calls
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: '0.01 USD per call'
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: GLM-5.1, GLM-5-Turbo, GLM-5
+  - name: GLM-4.7, GLM-4.7-FlashX, GLM-4.7-Flash (free)
+  - name: GLM-4.6, GLM-4.5, GLM-4.5-Air/X/AirX/Flash
+  - name: Vision models GLM-5V-Turbo, GLM-4.6V, GLM-4.5V
+  - name: GLM-Image, CogView-4
+  - name: GLM-OCR, audio transcription, embeddings
+- id: zhipu-ai-glm-coding-plan
+  name: GLM Coding Plan
+  type: subscription
+  description: Monthly subscription bundling usage allowances for AI-coding integrations.
+  entries:
+  - label: Subscription
+    name: coding_subscription
+    type: subscription
+    metric: bundle
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: see plan tiers
+    userMultiplied: false
+  elements:
+  - name: 5-hour and weekly usage windows
+  - name: Peak/off-peak quota multipliers (1x off-peak, 2-3x peak)
+  - name: Free GLM-4.7-Flash and GLM-4.5-Flash usage
+- id: zhipu-ai-free
+  name: Free Tier (Flash Models)
+  type: free
+  description: Free access to designated Flash variants.
+  entries:
+  - label: GLM-4.7-Flash
+    name: glm_47_flash_free
+    type: free
+    metric: tokens
+    limit: -1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: '0.00'
+    userMultiplied: false
+  elements:
+  - name: GLM-4.7-Flash
+  - name: GLM-4.5-Flash
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

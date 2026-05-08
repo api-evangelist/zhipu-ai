@@ -3,7 +3,10 @@ url: https://raw.githubusercontent.com/api-evangelist/zhipu-ai/refs/heads/main/a
 name: Zhipu AI
 x-type: company
 description: >-
-  Zhipu AI is a Chinese AI research lab and the developer of the GLM (General Language Model) family. The BigModel platform exposes chat, embeddings, and image-generation APIs over GLM-4 and GLM-4V.
+  Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM
+  (General Language Model) family. The Z.ai open platform exposes chat completions, vision,
+  image generation, video generation, web search, audio transcription, embeddings, fine-tuning,
+  and agent APIs across the GLM-5, GLM-4.7, GLM-4.6, and GLM-4.5 model series.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - AI
@@ -11,13 +14,48 @@ tags:
   - Inference
   - GLM
   - ChatGLM
+  - Multimodal
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: zhipu-ai:platform
+    name: Z.ai Open Platform API
+    description: >-
+      OpenAI-compatible chat completions plus vision, image, video, web search, audio, embeddings,
+      fine-tuning, and agent endpoints. International base URL https://api.z.ai/api; legacy China
+      base URL https://open.bigmodel.cn/api/paas/v4.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.z.ai/api-reference/llm/chat-completion
+    baseURL: https://api.z.ai/api
+    tags:
+      - AI
+      - LLM
+      - Chat Completions
+      - Vision
+      - Image Generation
+      - Video Generation
+      - Embeddings
+      - Fine Tuning
+      - Web Search
+    properties:
+      - type: Documentation
+        url: https://docs.z.ai
+      - type: OpenAPI
+        url: openapi/zhipu-ai-openapi.json
+      - type: SignUp
+        url: https://z.ai
+      - type: Pricing
+        url: https://docs.z.ai/guides/overview/pricing
+      - type: LegacyBaseURL
+        url: https://open.bigmodel.cn/api/paas/v4
 common:
   - type: Website
     url: https://www.zhipuai.cn/
+  - type: AlternateWebsite
+    url: https://z.ai
+  - type: Documentation
+    url: https://docs.z.ai
   - type: Plans
     url: plans/zhipu-ai-plans-pricing.yml
   - type: RateLimits

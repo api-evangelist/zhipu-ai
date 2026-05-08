@@ -5,31 +5,46 @@ provider: Zhipu AI
 providerId: zhipu-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - GLM
-- ChatGLM
 - Rate Limiting
 - Quotas
-- Throttling
-description: Placeholder rate-limit artifact for Zhipu AI. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  Z.ai applies model-specific concurrency to API users with prepaid balance. GLM Coding Plan
+  subscribers have 5-hour and weekly usage windows with peak/off-peak quota multipliers.
+notes: >-
+  Z.ai does not publish a comprehensive numeric RPM/TPM/concurrency table; concurrency is
+  managed per-model and per-account. Some paid tiers default to 1 in-flight request unless
+  the package explicitly grants more.
 sources:
-- https://www.zhipuai.cn/
+- https://z.ai/manage-apikey/rate-limits
+- https://docs.z.ai
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: API Default Concurrency
   scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+  metric: concurrent-requests
+  limit: 1
+  notes: Default per-model concurrency for prepaid API users; varies by package.
+- name: GLM Coding Plan Window
+  scope: account
+  metric: window
+  limit: '5-hour and weekly'
+  notes: Usage allowances reset on rolling 5-hour and weekly windows.
+- name: Peak Hours Multiplier
+  scope: account
+  metric: quota-multiplier
+  limit: '2-3x'
+  notes: Peak (14:00-18:00 UTC+8) consumes quota at 2-3x the off-peak rate for GLM-5.1 / GLM-5-Turbo.
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Exponential backoff with jitter; honor Retry-After headers.
+- name: Concurrency Upgrade
+  description: Higher concurrency requires contacting Z.ai sales or upgrading plan tier.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

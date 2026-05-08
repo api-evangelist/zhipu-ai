@@ -5,20 +5,22 @@ provider: Zhipu AI
 providerId: zhipu-ai
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - AI
 - LLM
-- Inference
 - GLM
-- ChatGLM
 - FinOps
-- Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Zhipu AI. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for Z.ai / Zhipu AI. Two commercial paths: prepaid API balance
+  consumed against per-million-token rates per model, plus GLM Coding Plan subscription with
+  capped usage windows.
+notes: >-
+  Cached input storage is currently free (limited-time). Plan deductions are weighted by
+  peak/off-peak windows for some models.
 sources:
-- https://www.zhipuai.cn/
+- https://docs.z.ai/guides/overview/pricing
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -27,40 +29,73 @@ alignedWith:
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 publisherName: Zhipu AI
-serviceCategory: AI
+serviceCategory: AI and Machine Learning
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
-  billingCurrency: USD
+  pricingCategory: Mixed (Usage and Subscription)
+  billingFrequency: On-Demand (Recharge) / Monthly
+  billingCurrency: USD/CNY
   chargeCategories:
   - Usage
   - Purchase
   - Adjustment
 focusColumns:
-  ServiceName: Zhipu AI
-  ServiceCategory: AI
+  ServiceName: Z.ai Open Platform
+  ServiceCategory: AI and Machine Learning
   ProviderName: Zhipu AI
   PublisherName: Zhipu AI
   InvoiceIssuerName: Zhipu AI
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: input_tokens
+  description: Input tokens by model.
+  unit: tokens
   aggregation: sum
-  dimensions:
-  - account
-  - resource
+  dimensions: [model, account]
+- name: cached_input_tokens
+  description: Cached input tokens (currently free).
+  unit: tokens
+  aggregation: sum
+  dimensions: [model, account]
+- name: output_tokens
+  description: Output tokens by model.
+  unit: tokens
+  aggregation: sum
+  dimensions: [model, account]
+- name: image_generations
+  description: Images generated.
+  unit: images
+  aggregation: sum
+  dimensions: [model, account]
+- name: video_generations
+  description: Videos generated.
+  unit: videos
+  aggregation: sum
+  dimensions: [model, account]
+- name: web_search_calls
+  description: Web search tool invocations.
+  unit: calls
+  aggregation: sum
+  dimensions: [account]
+- name: audio_transcription_tokens
+  description: Audio transcription tokens.
+  unit: tokens
+  aggregation: sum
+  dimensions: [model, account]
+- name: agent_tokens
+  description: Agent service tokens.
+  unit: tokens
+  aggregation: sum
+  dimensions: [agent, account]
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Console reports balance and consumption per model; coding plan dashboards show window utilization.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Tag API keys per workload; coding-plan seats per developer.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Use Flash variants (free or near-free) for non-critical paths; off-peak windows reduce coding-plan deductions.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Track GLM Coding Plan window utilization; renew or right-size at billing cycle.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
