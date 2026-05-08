@@ -1,0 +1,29 @@
+aid: zhipu-ai
+url: https://raw.githubusercontent.com/api-evangelist/zhipu-ai/refs/heads/main/apis.yml
+name: Zhipu AI
+x-type: company
+description: >-
+  Zhipu AI is a Chinese AI research lab and the developer of the GLM (General Language Model) family. The BigModel platform exposes chat, embeddings, and image-generation APIs over GLM-4 and GLM-4V.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - AI
+  - LLM
+  - Inference
+  - GLM
+  - ChatGLM
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.zhipuai.cn/
+  - type: Plans
+    url: plans/zhipu-ai-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/zhipu-ai-rate-limits.yml
+  - type: FinOps
+    url: finops/zhipu-ai-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
