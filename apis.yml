@@ -62,6 +62,43 @@ common:
     url: rate-limits/zhipu-ai-rate-limits.yml
   - type: FinOps
     url: finops/zhipu-ai-finops.yml
+  - type: Integrations
+    url: https://www.zhipuai.cn/integrations
+integrations:
+  - name: Z.AI
+  - name: Animation
+  - name: Send
+  - name: AI Slides
+  - name: Full Stack
+  - name: Magic Design
+  - name: Help Me Write
+  - name: ad
+  - name: GLM-5-Turbo
+  - name: GLM-5
+  - name: GLM-4.6V
+  - name: AutoGLM
+  - name: GLM-4.5V
+  - name: translate
+  - name: 海报
+  - name: 模型微调
+  - name: AI 搜索工具
+  - name: AutoClaw
+  - name: 智谱清言
+  - name: 智谱学习中心
+  - name: Zread.ai
+  - name: AMiner
+  - name: 智谱AI输入法
+  - name: business
+  - name: 智谱首份业绩报告发布，探索AGI智能上界
+  - name: 智谱（02513.HK）公布2025年度业绩发布会安排
+  - name: 中关村自主大模型产业联盟第一次会员大会 结果公示
+  - name: GLM-PC 基座模型，CogAgent-9B 开源
+  - name: Agent 新进展：跨 app、跨设备、更多玩法｜智谱 Agent OpenDay
+  - name: 智谱与英特尔深化智能生态合作，落地端侧智谱清言和CodeGeeX智能编程助手
+  - name: wechat
+  - name: WeChat QR Code
+  - name: github
+  - name: huggingface
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
