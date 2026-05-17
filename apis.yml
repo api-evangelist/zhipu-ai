@@ -1,7 +1,7 @@
 aid: zhipu-ai
 url: https://raw.githubusercontent.com/api-evangelist/zhipu-ai/refs/heads/main/apis.yml
 name: Zhipu AI
-x-type: company
+kind: company
 description: >-
   Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM
   (General Language Model) family. The Z.ai open platform exposes chat completions, vision,
