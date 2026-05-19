@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Z.AI API — Tools API
+  description: 'Z.AI API — Tools API. 1 operations. Lead operation: Web Reader. Self-contained Naftiko capability covering
+    one Zhipu Ai business surface.'
+  tags:
+  - Zhipu Ai
+  - Tools API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ZHIPU_AI_API_KEY: ZHIPU_AI_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: zhipu-ai-tools-api
+    baseUri: https://api.z.ai/api
+    description: Z.AI API — Tools API business capability. Self-contained, no shared references.
+    resources:
+    - name: paas-v4-reader
+      path: /paas/v4/reader
+      operations:
+      - name: post
+        method: POST
+        description: Web Reader
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ZHIPU_AI_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: zhipu-ai-tools-api-rest
+    port: 8080
+    description: REST adapter for Z.AI API — Tools API. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/paas/v4/reader
+      name: paas-v4-reader
+      description: REST surface for paas-v4-reader.
+      operations:
+      - method: POST
+        name: post
+        description: Web Reader
+        call: zhipu-ai-tools-api.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: zhipu-ai-tools-api-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Z.AI API — Tools API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: web-reader
+      description: Web Reader
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: zhipu-ai-tools-api.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
