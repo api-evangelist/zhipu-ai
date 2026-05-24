@@ -68,6 +68,8 @@ common:
     url: finops/zhipu-ai-finops.yml
   - type: Integrations
     url: https://www.zhipuai.cn/integrations
+  - type: LLMsTxt
+    url: https://docs.z.ai/llms.txt
 integrations:
   - name: Z.AI
   - name: Animation
