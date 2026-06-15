@@ -1,0 +1,298 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Z.AI API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "POST /paas/v4/chat/completions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/chat/completions",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a chat completion model that generates AI replies for given conversation messages. It supports multimodal inputs (text, images, audio, video, file), offers configurable parameters (like temperature, max tokens, tool use), and supports both streaming and non-streaming output modes."
+        },
+        {
+          "info": {
+            "name": "POST /paas/v4/videos/generations",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/videos/generations",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "CogVideoX is a video generation large model developed by Z.AI, equipped with powerful video generation capabilities. Simply inputting text or images allows for effortless video creation.\n\nVidu: A high-performance video large model that combines high consistency and high dynamism, with precise semantic understanding and exceptional reasoning speed."
+        },
+        {
+          "info": {
+            "name": "GET /paas/v4/async-result/{id}",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.z.ai/api/paas/v4/async-result/:id",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is used to query the result of an asynchronous request."
+        },
+        {
+          "info": {
+            "name": "Generate Image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/images/generations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use [GLM-Image](/guides/image/glm-image) series models to generate high-quality images from text prompts. Through quick and accurate understanding of user text descriptions, `AI` image expression becomes more precise and personalized."
+        },
+        {
+          "info": {
+            "name": "Generate Image (Async)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/async/images/generations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use the [GLM-Image](/guides/image/glm-image) series models to generate high-quality images from text prompts. Through quick and accurate understanding of user text descriptions, `AI` image expression becomes more precise and personalized. Only supports `GLM-Image` model."
+        },
+        {
+          "info": {
+            "name": "Speech to Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/audio/transcriptions",
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          },
+          "docs": "Use the [GLM-ASR-2512](/guides/audio/glm-asr-2512) model to transcribe audio files into text, supporting multiple languages and real-time streaming transcription."
+        },
+        {
+          "info": {
+            "name": "Text Tokenizer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/tokenizer",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "`Tokenizer` is used to split text into `tokens` recognizable by the model and calculate the count. It receives user input text, processes it through the model for tokenization, and finally returns the corresponding `token` count. It is suitable for text length evaluation, model input estimation, dialogue context truncation, cost calculation, etc."
+        },
+        {
+          "info": {
+            "name": "Layout Parsing",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/layout_parsing",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Use the [GLM-OCR](/guides/vlm/glm-ocr) model to parse the layout of documents and images and extract text content. Support OCR recognition of images and PDF documents, returning detailed layout information and visualization results."
+        },
+        {
+          "info": {
+            "name": "POST /paas/v4/web_search",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/web_search",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "The [Web Search](/guides/tools/web-search) is a specialized search engine for large language models. Building upon traditional search engine capabilities like web crawling and ranking, it enhances intent recognition to return results better suited for LLM processing (including webpage titles, URLs, summaries, site names, favicons etc.)."
+        },
+        {
+          "info": {
+            "name": "POST /paas/v4/files",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/files",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "purpose",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "This API is designed for uploading auxiliary files (such as glossaries, terminology lists) to support the translation service. It allows users to upload reference materials that can enhance translation accuracy and consistency."
+        },
+        {
+          "info": {
+            "name": "POST /v1/agents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/v1/agents",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive h"
+        },
+        {
+          "info": {
+            "name": "POST /v1/agents/async-result",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/v1/agents/async-result",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint is used to query the result of an asynchronous request."
+        },
+        {
+          "info": {
+            "name": "POST /v1/agents/conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/v1/agents/conversation",
+            "headers": [
+              {
+                "name": "Accept-Language",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tools API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Web Reader",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/reader",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reads and parses the content of the specified URL. Supports selectable return formats, cache control, image retention, and summary options."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

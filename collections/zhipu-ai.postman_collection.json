@@ -1,0 +1,2470 @@
+{
+  "item": [
+    {
+      "id": "8f56e50a-c22b-4c1b-bc30-ec6f3bace6ef",
+      "name": "Tools API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "47cded71-b94e-479a-8695-ba879026d163",
+          "name": "Web Reader",
+          "request": {
+            "name": "Web Reader",
+            "description": {
+              "content": "Reads and parses the content of the specified URL. Supports selectable return formats, cache control, image retention, and summary options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "reader"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<string>\",\n  \"timeout\": 20,\n  \"no_cache\": false,\n  \"return_format\": \"markdown\",\n  \"retain_images\": true,\n  \"no_gfm\": false,\n  \"keep_img_data_url\": false,\n  \"with_images_summary\": false,\n  \"with_links_summary\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "02c565a7-dc7b-466b-8e7a-93270fd0d995",
+              "name": "Processing successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "paas",
+                    "v4",
+                    "reader"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"https://www.example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"created\": 3299,\n  \"request_id\": \"string\",\n  \"model\": \"string\",\n  \"reader_result\": {\n    \"content\": \"string\",\n    \"description\": \"string\",\n    \"title\": \"string\",\n    \"url\": \"string\",\n    \"external\": {\n      \"stylesheet\": {\n        \"key_0\": {\n          \"type\": \"string\"\n        },\n        \"key_1\": {\n          \"type\": \"string\"\n        }\n      }\n    },\n    \"metadata\": {\n      \"keywords\": \"string\",\n      \"viewport\": \"string\",\n      \"description\": \"string\",\n      \"format-detection\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b2d8ebcd-79e6-4587-a7eb-998c7465e4b2",
+              "name": "The request has failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "paas",
+                    "v4",
+                    "reader"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"https://www.example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "f64111e0-f95e-4778-8921-7c8372b85b37",
+      "name": "Create a chat completion model that generates AI replies for given conversation messages. It supports multimodal inputs (text, images, audio, video, file), offers configurable parameters (like temperature, max tokens, tool use), and supports both streaming and non-streaming output modes.",
+      "request": {
+        "name": "Create a chat completion model that generates AI replies for given conversation messages. It supports multimodal inputs (text, images, audio, video, file), offers configurable parameters (like temperature, max tokens, tool use), and supports both streaming and non-streaming output modes.",
+        "description": {
+          "content": "Create a chat completion model that generates AI replies for given conversation messages. It supports multimodal inputs (text, images, audio, video, file), offers configurable parameters (like temperature, max tokens, tool use), and supports both streaming and non-streaming output modes.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "chat",
+            "completions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"glm-5.1\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"<string>\"\n    }\n  ],\n  \"request_id\": \"<string>\",\n  \"do_sample\": true,\n  \"stream\": false,\n  \"thinking\": {\n    \"type\": \"enabled\",\n    \"clear_thinking\": true\n  },\n  \"temperature\": 1,\n  \"top_p\": 0.95,\n  \"max_tokens\": \"<integer>\",\n  \"tool_stream\": false,\n  \"tools\": [\n    {\n      \"type\": \"function\",\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    {\n      \"type\": \"function\",\n      \"function\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"parameters\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    }\n  ],\n  \"tool_choice\": \"<string>\",\n  \"stop\": [\n    \"<string>\"\n  ],\n  \"response_format\": {\n    \"type\": \"text\"\n  },\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "546149d7-d4cc-46f2-9c72-c813024be6d1",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-5.1\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a useful AI assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Please tell us about the development of artificial intelligence.\"\n    }\n  ],\n  \"temperature\": 1,\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"request_id\": \"string\",\n  \"created\": 6803,\n  \"model\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 8798,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"string\",\n        \"reasoning_content\": \"string\",\n        \"tool_calls\": [\n          {\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": {}\n            },\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": {}\n            },\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"finish_reason\": \"string\"\n    },\n    {\n      \"index\": 4715,\n      \"message\": {\n        \"role\": \"assistant\",\n        \"content\": \"string\",\n        \"reasoning_content\": \"string\",\n        \"tool_calls\": [\n          {\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": {}\n            },\n            \"id\": \"string\",\n            \"type\": \"string\"\n          },\n          {\n            \"function\": {\n              \"name\": \"string\",\n              \"arguments\": {}\n            },\n            \"id\": \"string\",\n            \"type\": \"string\"\n          }\n        ]\n      },\n      \"finish_reason\": \"string\"\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 2680.4372234510865,\n    \"completion_tokens\": 9614.382404384136,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 40.16038099130314\n    },\n    \"total_tokens\": 5245\n  },\n  \"web_search\": [\n    {\n      \"title\": \"string\",\n      \"content\": \"string\",\n      \"link\": \"string\",\n      \"media\": \"string\",\n      \"icon\": \"string\",\n      \"refer\": \"string\",\n      \"publish_date\": \"string\"\n    },\n    {\n      \"title\": \"string\",\n      \"content\": \"string\",\n      \"link\": \"string\",\n      \"media\": \"string\",\n      \"icon\": \"string\",\n      \"refer\": \"string\",\n      \"publish_date\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1e634952-a6de-47c1-8704-67e5c003632e",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "chat",
+                "completions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-5.1\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a useful AI assistant.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Please tell us about the development of artificial intelligence.\"\n    }\n  ],\n  \"temperature\": 1,\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8920bd13-2c64-4201-843a-e10b70e8aa6a",
+      "name": "CogVideoX is a video generation large model developed by Z.AI, equipped with powerful video generation capabilities. Simply inputting text or images allows for effortless video creation.\n\nVidu: A high-performance video large model that combines high consistency and high dynamism, with precise semantic understanding and exceptional reasoning speed.",
+      "request": {
+        "name": "CogVideoX is a video generation large model developed by Z.AI, equipped with powerful video generation capabilities. Simply inputting text or images allows for effortless video creation.\n\nVidu: A high-performance video large model that combines high consistency and high dynamism, with precise semantic understanding and exceptional reasoning speed.",
+        "description": {
+          "content": "CogVideoX is a video generation large model developed by Z.AI, equipped with powerful video generation capabilities. Simply inputting text or images allows for effortless video creation.\n\nVidu: A high-performance video large model that combines high consistency and high dynamism, with precise semantic understanding and exceptional reasoning speed.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "videos",
+            "generations"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"quality\": \"<string>\",\n  \"with_audio\": \"<boolean>\",\n  \"image_url\": [\n    \"<uri>\",\n    \"<uri>\"\n  ],\n  \"size\": \"<string>\",\n  \"fps\": \"<integer>\",\n  \"duration\": \"<integer>\",\n  \"request_id\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "873fb167-5906-42b0-883c-41082d596163",
+          "name": "Processing successful.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "videos",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"cogvideox-3\",\n  \"prompt\": \"A cat is playing with a ball.\",\n  \"quality\": \"quality\",\n  \"with_audio\": true,\n  \"size\": \"1920x1080\",\n  \"fps\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"model\": \"string\",\n  \"id\": \"string\",\n  \"request_id\": \"string\",\n  \"task_status\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "c7d3a5d7-66f2-463d-ad76-3b975fb1aee8",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "videos",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"cogvideox-3\",\n  \"prompt\": \"A cat is playing with a ball.\",\n  \"quality\": \"quality\",\n  \"with_audio\": true,\n  \"size\": \"1920x1080\",\n  \"fps\": 30\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "15e7758d-6588-4a55-8cb6-31d7be0e2755",
+      "name": "This endpoint is used to query the result of an asynchronous request.",
+      "request": {
+        "name": "This endpoint is used to query the result of an asynchronous request.",
+        "description": {
+          "content": "This endpoint is used to query the result of an asynchronous request.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "async-result",
+            ":id"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "id",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "bacc6fe1-5422-4b6b-a851-b6605de5dba8",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "async-result",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"model\": \"string\",\n  \"task_status\": \"string\",\n  \"video_result\": [\n    {\n      \"url\": \"string\",\n      \"cover_image_url\": \"string\"\n    },\n    {\n      \"url\": \"string\",\n      \"cover_image_url\": \"string\"\n    }\n  ],\n  \"request_id\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "994698d0-d624-4f2c-aa91-063bebec468b",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "async-result",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a173a6ef-d14b-4fee-bd33-1d034006f4a6",
+      "name": "Generate Image",
+      "request": {
+        "name": "Generate Image",
+        "description": {
+          "content": "Use [GLM-Image](/guides/image/glm-image) series models to generate high-quality images from text prompts. Through quick and accurate understanding of user text descriptions, `AI` image expression becomes more precise and personalized.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "images",
+            "generations"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"quality\": \"hd\",\n  \"size\": \"1280x1280\",\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "81b40264-3446-4eab-8a51-3c32a5b58500",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "images",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-image\",\n  \"prompt\": \"A cute little kitten sitting on a sunny windowsill, with the background of blue sky and white clouds.\",\n  \"size\": \"1280x1280\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"created\": 1760335349,\n  \"data\": [\n    {\n      \"url\": \"string\"\n    },\n    {\n      \"url\": \"string\"\n    }\n  ],\n  \"content_filter\": [\n    {\n      \"role\": \"user\",\n      \"level\": 0\n    },\n    {\n      \"role\": \"assistant\",\n      \"level\": 2\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "9b562a4c-4c42-4594-9e68-3ae41c8d4993",
+          "name": "Request Failed",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "images",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-image\",\n  \"prompt\": \"A cute little kitten sitting on a sunny windowsill, with the background of blue sky and white clouds.\",\n  \"size\": \"1280x1280\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "9a17a464-3304-4b57-a188-3b533ab94b71",
+      "name": "Generate Image (Async)",
+      "request": {
+        "name": "Generate Image (Async)",
+        "description": {
+          "content": "Use the [GLM-Image](/guides/image/glm-image) series models to generate high-quality images from text prompts. Through quick and accurate understanding of user text descriptions, `AI` image expression becomes more precise and personalized. Only supports `GLM-Image` model.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "async",
+            "images",
+            "generations"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"<string>\",\n  \"prompt\": \"<string>\",\n  \"quality\": \"hd\",\n  \"size\": \"1280x1280\",\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "6f715b4e-c7b9-4e23-97d1-352b278535d9",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "async",
+                "images",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-image\",\n  \"prompt\": \"A cute little kitten sitting on a sunny windowsill, with the background of blue sky and white clouds.\",\n  \"size\": \"1280x1280\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"model\": \"string\",\n  \"id\": \"string\",\n  \"request_id\": \"string\",\n  \"task_status\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "1d46e808-6c8c-4e96-9d69-c82be20abd90",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "async",
+                "images",
+                "generations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-image\",\n  \"prompt\": \"A cute little kitten sitting on a sunny windowsill, with the background of blue sky and white clouds.\",\n  \"size\": \"1280x1280\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "cdb91f86-d969-427a-b703-18a4e307e221",
+      "name": "Speech to Text",
+      "request": {
+        "name": "Speech to Text",
+        "description": {
+          "content": "Use the [GLM-ASR-2512](/guides/audio/glm-asr-2512) model to transcribe audio files into text, supporting multiple languages and real-time streaming transcription.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "audio",
+            "transcriptions"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "description": "(Required) The audio file to be transcribed. Supported audio file formats: `.wav / .mp3`. Specifications: file size ≤ `25 MB`, audio duration ≤ `30 seconds`."
+            },
+            {
+              "key": "model",
+              "value": "glm-asr-2512",
+              "type": "text",
+              "description": "(Required) The model ID to invoke. (This can only be one of glm-asr-2512)"
+            },
+            {
+              "key": "file_base64",
+              "value": "<string>",
+              "type": "text",
+              "description": "Base64 encoded audio file. Only one of file_base64 or file needs to be provided (if both are provided, file takes precedence)."
+            },
+            {
+              "key": "prompt",
+              "value": "<string>",
+              "type": "text",
+              "description": "In long text scenarios, you can provide previous transcription results as context. Recommended to be less than 8000 characters."
+            },
+            {
+              "key": "hotwords",
+              "value": "[\"<string>\",\"<string>\"]",
+              "type": "text",
+              "description": "Hotword list to improve recognition accuracy for domain-specific vocabulary. Format example: [\"person_name\",\"place_name\"]. Recommended not to exceed 100 items."
+            },
+            {
+              "key": "stream",
+              "value": "false",
+              "type": "text",
+              "description": "This parameter should be set to `false` or omitted when using synchronous calls. It indicates that the model returns all content at once after generating all content. Default is `false`. If set to `true`, the model will return generated content in chunks via standard `Event Stream`. When the `Event Stream` ends, a `data: [DONE]` message will be returned."
+            },
+            {
+              "key": "request_id",
+              "value": "<string>",
+              "type": "text",
+              "description": "Passed by the client, must be unique. A unique identifier to distinguish each request. If not provided by the client, the platform will generate one by default."
+            },
+            {
+              "key": "user_id",
+              "value": "<string>",
+              "type": "text",
+              "description": "A unique `ID` for the end user, helping the platform intervene in illegal activities, generation of illegal or inappropriate content, or other abusive behaviors by end users. `ID` length requirement: at least `6` characters, at most `128` characters."
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "332a1d6f-62de-4a56-ab4b-8a63172d51fe",
+          "name": "Request processed successfully",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "audio",
+                "transcriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "description": {
+                    "content": "(Required) The model ID to invoke. (This can only be one of glm-asr-2512)",
+                    "type": "text/plain"
+                  },
+                  "key": "model",
+                  "value": "glm-asr-2512",
+                  "type": "text"
+                },
+                {
+                  "description": {
+                    "content": "This parameter should be set to `false` or omitted when using synchronous calls. It indicates that the model returns all content at once after generating all content. Default is `false`. If set to `true`, the model will return generated content in chunks via standard `Event Stream`. When the `Event Stream` ends, a `data: [DONE]` message will be returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "stream",
+                  "value": "false",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"created\": 4548,\n  \"request_id\": \"string\",\n  \"model\": \"string\",\n  \"text\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "6579d70a-7e79-4a3d-9d6b-d781256b32db",
+          "name": "Request failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "audio",
+                "transcriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "description": {
+                    "content": "(Required) The model ID to invoke. (This can only be one of glm-asr-2512)",
+                    "type": "text/plain"
+                  },
+                  "key": "model",
+                  "value": "glm-asr-2512",
+                  "type": "text"
+                },
+                {
+                  "description": {
+                    "content": "This parameter should be set to `false` or omitted when using synchronous calls. It indicates that the model returns all content at once after generating all content. Default is `false`. If set to `true`, the model will return generated content in chunks via standard `Event Stream`. When the `Event Stream` ends, a `data: [DONE]` message will be returned.",
+                    "type": "text/plain"
+                  },
+                  "key": "stream",
+                  "value": "false",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "f0483528-ca00-4cf1-b3b1-2e5046b59c68",
+      "name": "Text Tokenizer",
+      "request": {
+        "name": "Text Tokenizer",
+        "description": {
+          "content": "`Tokenizer` is used to split text into `tokens` recognizable by the model and calculate the count. It receives user input text, processes it through the model for tokenization, and finally returns the corresponding `token` count. It is suitable for text length evaluation, model input estimation, dialogue context truncation, cost calculation, etc.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "tokenizer"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"glm-4.6\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"tools\": {},\n  \"request_id\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "36859a1e-7bc7-4cb6-884f-e71f7d2952da",
+          "name": "Business processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "tokenizer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-4.6\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What opportunities and challenges will the Chinese large model industry face in 2025?\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"20241120141244890ab4ee4af84acf\",\n  \"usage\": {\n    \"prompt_tokens\": 272.6160464333727,\n    \"image_tokens\": 51.28879897301819,\n    \"video_tokens\": 9993.192803843194,\n    \"total_tokens\": 2369.562491118139\n  },\n  \"created\": 1727156815,\n  \"request_id\": \"1\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "673cb57b-0ae8-4c85-acce-4a975c1774d3",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "tokenizer"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-4.6\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": \"What opportunities and challenges will the Chinese large model industry face in 2025?\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "03e6c6e1-6f28-4799-b181-6c290e53aaf9",
+      "name": "Layout Parsing",
+      "request": {
+        "name": "Layout Parsing",
+        "description": {
+          "content": "Use the [GLM-OCR](/guides/vlm/glm-ocr) model to parse the layout of documents and images and extract text content. Support OCR recognition of images and PDF documents, returning detailed layout information and visualization results.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "layout_parsing"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"model\": \"<string>\",\n  \"file\": \"<string>\",\n  \"return_crop_images\": false,\n  \"need_layout_visualization\": false,\n  \"start_page_id\": \"<integer>\",\n  \"end_page_id\": \"<integer>\",\n  \"request_id\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "f9e40d49-bf71-4bb3-9622-ec8df831c0e5",
+          "name": "Business processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "layout_parsing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-ocr\",\n  \"file\": \"https://cdn.bigmodel.cn/static/logo/introduction.png\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"task_123456789\",\n  \"created\": 1727156815,\n  \"model\": \"GLM-OCR\",\n  \"md_results\": \"# Doc title\\nThis is the document content...\",\n  \"layout_details\": [\n    [\n      {\n        \"index\": 1,\n        \"label\": \"text\",\n        \"bbox_2d\": [\n          0.1,\n          0.1,\n          0.5,\n          0.3\n        ],\n        \"content\": \"This is the content of the element\",\n        \"height\": 800,\n        \"width\": 600\n      },\n      {\n        \"index\": 1,\n        \"label\": \"text\",\n        \"bbox_2d\": [\n          0.1,\n          0.1,\n          0.5,\n          0.3\n        ],\n        \"content\": \"This is the content of the element\",\n        \"height\": 800,\n        \"width\": 600\n      }\n    ],\n    [\n      {\n        \"index\": 1,\n        \"label\": \"text\",\n        \"bbox_2d\": [\n          0.1,\n          0.1,\n          0.5,\n          0.3\n        ],\n        \"content\": \"This is the content of the element\",\n        \"height\": 800,\n        \"width\": 600\n      },\n      {\n        \"index\": 1,\n        \"label\": \"text\",\n        \"bbox_2d\": [\n          0.1,\n          0.1,\n          0.5,\n          0.3\n        ],\n        \"content\": \"This is the content of the element\",\n        \"height\": 800,\n        \"width\": 600\n      }\n    ]\n  ],\n  \"layout_visualization\": [\n    \"string\",\n    \"string\"\n  ],\n  \"data_info\": {\n    \"num_pages\": 5,\n    \"pages\": [\n      {\n        \"width\": 600,\n        \"height\": 800\n      },\n      {\n        \"width\": 600,\n        \"height\": 800\n      }\n    ]\n  },\n  \"usage\": {\n    \"prompt_tokens\": 6443.827054188386,\n    \"completion_tokens\": 9329.947737809598,\n    \"prompt_tokens_details\": {\n      \"cached_tokens\": 8635.426737548043\n    },\n    \"total_tokens\": 2300\n  },\n  \"request_id\": \"req_123456789\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "475f16c4-b492-4266-8e73-a024f2c7e4c4",
+          "name": "Request failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "layout_parsing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model\": \"glm-ocr\",\n  \"file\": \"https://cdn.bigmodel.cn/static/logo/introduction.png\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "09e609c5-8423-48c6-b1c0-d0938f6af27e",
+      "name": "The [Web Search](/guides/tools/web-search) is a specialized search engine for large language models. Building upon traditional search engine capabilities like web crawling and ranking, it enhances intent recognition to return results better suited for LLM processing (including webpage titles, URLs, summaries, site names, favicons etc.).",
+      "request": {
+        "name": "The [Web Search](/guides/tools/web-search) is a specialized search engine for large language models. Building upon traditional search engine capabilities like web crawling and ranking, it enhances intent recognition to return results better suited for LLM processing (including webpage titles, URLs, summaries, site names, favicons etc.).",
+        "description": {
+          "content": "The [Web Search](/guides/tools/web-search) is a specialized search engine for large language models. Building upon traditional search engine capabilities like web crawling and ranking, it enhances intent recognition to return results better suited for LLM processing (including webpage titles, URLs, summaries, site names, favicons etc.).",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "web_search"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"search_engine\": \"search-prime\",\n  \"search_query\": \"<string>\",\n  \"count\": \"<integer>\",\n  \"search_domain_filter\": \"<string>\",\n  \"search_recency_filter\": \"<string>\",\n  \"request_id\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "5855b565-4f2b-42f1-8797-c2374d382d5e",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "web_search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"search_engine\": \"search-prime\",\n  \"search_query\": \"<string>\",\n  \"count\": \"<integer>\",\n  \"search_domain_filter\": \"<string>\",\n  \"search_recency_filter\": \"<string>\",\n  \"request_id\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"created\": 7662,\n  \"search_result\": [\n    {\n      \"title\": \"string\",\n      \"content\": \"string\",\n      \"link\": \"string\",\n      \"media\": \"string\",\n      \"icon\": \"string\",\n      \"refer\": \"string\",\n      \"publish_date\": \"string\"\n    },\n    {\n      \"title\": \"string\",\n      \"content\": \"string\",\n      \"link\": \"string\",\n      \"media\": \"string\",\n      \"icon\": \"string\",\n      \"refer\": \"string\",\n      \"publish_date\": \"string\"\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "2ed7beef-fe3a-4e76-a584-baaf484aa21a",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "web_search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"search_engine\": \"search-prime\",\n  \"search_query\": \"<string>\",\n  \"count\": \"<integer>\",\n  \"search_domain_filter\": \"<string>\",\n  \"search_recency_filter\": \"<string>\",\n  \"request_id\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "0f3b229f-231a-4d12-b3db-97cf81baedb9",
+      "name": "This API is designed for uploading auxiliary files (such as glossaries, terminology lists) to support the translation service. It allows users to upload reference materials that can enhance translation accuracy and consistency.",
+      "request": {
+        "name": "This API is designed for uploading auxiliary files (such as glossaries, terminology lists) to support the translation service. It allows users to upload reference materials that can enhance translation accuracy and consistency.",
+        "description": {
+          "content": "This API is designed for uploading auxiliary files (such as glossaries, terminology lists) to support the translation service. It allows users to upload reference materials that can enhance translation accuracy and consistency.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "paas",
+            "v4",
+            "files"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "purpose",
+              "value": "agent",
+              "type": "text",
+              "description": "(Required) Upload purpose (agent) (This can only be one of agent)"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "description": "(Required) File to upload. Limit to `100MB`. Allowed formats: `pdf`, `doc`, `xlsx`, `ppt`, `txt`, `jpg`, `png`."
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "id": "92f7bc0b-ceb9-4a54-bd7c-28ed170cebb6",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "description": {
+                    "content": "(Required) Upload purpose (agent) (This can only be one of agent)",
+                    "type": "text/plain"
+                  },
+                  "key": "purpose",
+                  "value": "agent",
+                  "type": "text"
+                },
+                {
+                  "description": {
+                    "content": "(Required) File to upload. Limit to `100MB`. Allowed formats: `pdf`, `doc`, `xlsx`, `ppt`, `txt`, `jpg`, `png`.",
+                    "type": "text/plain"
+                  },
+                  "key": "file",
+                  "value": "<binary>",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"string\",\n  \"object\": \"string\",\n  \"bytes\": 7625,\n  \"filename\": \"string\",\n  \"purpose\": \"string\",\n  \"created_at\": 9132\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "ea4fede7-9dff-47cb-9f22-772e90238e24",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "description": {
+                    "content": "(Required) Upload purpose (agent) (This can only be one of agent)",
+                    "type": "text/plain"
+                  },
+                  "key": "purpose",
+                  "value": "agent",
+                  "type": "text"
+                },
+                {
+                  "description": {
+                    "content": "(Required) File to upload. Limit to `100MB`. Allowed formats: `pdf`, `doc`, `xlsx`, `ppt`, `txt`, `jpg`, `png`.",
+                    "type": "text/plain"
+                  },
+                  "key": "file",
+                  "value": "<binary>",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "dedd27c3-1509-4881-9c2b-f6a6f754e5de",
+      "name": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive high-quality translation results. \n\n Popular Special Effects Videos: Popular special effects videos are intelligent templates launched based on trending features from pan-entertainment platforms, designed to precisely adapt to short video creative production needs. Currently, three effect templates are available: `French Kiss`, `Body Shake Dance`, and `Sexy Me`. After selecting a template, users only need to upload an image and enter corresponding prompts to generate a special effects video. \n\n GLM Slide/Poster Agent: An intelligent creation agent built for working people and creators. It goes beyond traditional engineering-style assembly tools—supporting one-click generation of slides or posters from natural language instructions. By natively integrating content generation with layout aesthetics and design conventions, it helps you quickly produce polished, professional-grade materials while lowering design barriers and boosting creative efficiency.",
+      "request": {
+        "name": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive high-quality translation results. \n\n Popular Special Effects Videos: Popular special effects videos are intelligent templates launched based on trending features from pan-entertainment platforms, designed to precisely adapt to short video creative production needs. Currently, three effect templates are available: `French Kiss`, `Body Shake Dance`, and `Sexy Me`. After selecting a template, users only need to upload an image and enter corresponding prompts to generate a special effects video. \n\n GLM Slide/Poster Agent: An intelligent creation agent built for working people and creators. It goes beyond traditional engineering-style assembly tools—supporting one-click generation of slides or posters from natural language instructions. By natively integrating content generation with layout aesthetics and design conventions, it helps you quickly produce polished, professional-grade materials while lowering design barriers and boosting creative efficiency.",
+        "description": {
+          "content": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive high-quality translation results. \n\n Popular Special Effects Videos: Popular special effects videos are intelligent templates launched based on trending features from pan-entertainment platforms, designed to precisely adapt to short video creative production needs. Currently, three effect templates are available: `French Kiss`, `Body Shake Dance`, and `Sexy Me`. After selecting a template, users only need to upload an image and enter corresponding prompts to generate a special effects video. \n\n GLM Slide/Poster Agent: An intelligent creation agent built for working people and creators. It goes beyond traditional engineering-style assembly tools—supporting one-click generation of slides or posters from natural language instructions. By natively integrating content generation with layout aesthetics and design conventions, it helps you quickly produce polished, professional-grade materials while lowering design barriers and boosting creative efficiency.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "agents"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"agent_id\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"custom_variables\": {\n    \"source_lang\": \"<string>\",\n    \"target_lang\": \"<string>\",\n    \"glossary\": \"<string>\",\n    \"strategy\": \"<string>\",\n    \"strategy_config\": {\n      \"general\": {\n        \"suggestion\": \"<string>\"\n      },\n      \"cot\": {\n        \"reason_lang\": \"<string>\"\n      }\n    }\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "cb4f65b8-881a-478d-83ae-97cee23cec3a",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "agents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"custom_variables\": {\n    \"source_lang\": \"<string>\",\n    \"target_lang\": \"<string>\",\n    \"glossary\": \"<string>\",\n    \"strategy\": \"<string>\",\n    \"strategy_config\": {\n      \"general\": {\n        \"suggestion\": \"<string>\"\n      },\n      \"cot\": {\n        \"reason_lang\": \"<string>\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"id\": \"<string>\",\n  \"agent_id\": \"<string>\",\n  \"choices\": [\n    {\n      \"index\": 123,\n      \"finish_reason\": \"<string>\",\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": {\n            \"text\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 123,\n    \"completion_tokens\": 123,\n    \"total_tokens\": 123,\n    \"total_calls\": 123\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "4d9fe068-2142-49de-8826-d8c7714b662d",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "agents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"custom_variables\": {\n    \"source_lang\": \"<string>\",\n    \"target_lang\": \"<string>\",\n    \"glossary\": \"<string>\",\n    \"strategy\": \"<string>\",\n    \"strategy_config\": {\n      \"general\": {\n        \"suggestion\": \"<string>\"\n      },\n      \"cot\": {\n        \"reason_lang\": \"<string>\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 123,\n  \"message\": \"<string>\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "8d5541a9-6759-423a-bef6-4e133e464b72",
+      "name": "This endpoint is used to query the result of an asynchronous request.",
+      "request": {
+        "name": "This endpoint is used to query the result of an asynchronous request.",
+        "description": {
+          "content": "This endpoint is used to query the result of an asynchronous request.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "agents",
+            "async-result"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"agent_id\": \"<string>\",\n  \"async_id\": \"<string>\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "cae6ce66-13e2-48b0-89ae-9a47ef5727a9",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "agents",
+                "async-result"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"async_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"string\",\n  \"agent_id\": \"string\",\n  \"async_id\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 9128,\n      \"finish_reason\": \"string\",\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"index\": 1032,\n      \"finish_reason\": \"string\",\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "318d3993-828f-4793-bd44-025205ca0a12",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "agents",
+                "async-result"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"async_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"status\": \"string\",\n  \"agent_id\": \"string\",\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "951c87d7-359d-40c6-b076-06e02fd3a135",
+      "name": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent",
+      "request": {
+        "name": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent",
+        "description": {
+          "content": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "v1",
+            "agents",
+            "conversation"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "header": [
+          {
+            "disabled": false,
+            "key": "Accept-Language",
+            "value": "en-US,en",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "auth": null,
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"agent_id\": \"<string>\",\n  \"conversation_id\": \"<string>\",\n  \"custom_variables\": {\n    \"include_pdf\": \"<boolean>\",\n    \"pages\": [\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      },\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    ]\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": [
+        {
+          "id": "6624a91d-274d-47ee-84f8-3153510c0715",
+          "name": "Processing successful",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "agents",
+                "conversation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"conversation_id\": \"<string>\",\n  \"custom_variables\": {\n    \"include_pdf\": \"<boolean>\",\n    \"pages\": [\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      },\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"conversation_id\": \"string\",\n  \"agent_id\": \"string\",\n  \"choices\": [\n    {\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        },
+        {
+          "id": "3d159ae2-eb98-42bb-8e85-12572a63471d",
+          "name": "The request has failed.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "v1",
+                "agents",
+                "conversation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: bearer",
+                  "type": "text/plain"
+                },
+                "key": "Authorization",
+                "value": "Bearer <token>"
+              },
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"conversation_id\": \"<string>\",\n  \"custom_variables\": {\n    \"include_pdf\": \"<boolean>\",\n    \"pages\": [\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      },\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"code\": 3158,\n  \"message\": \"string\"\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.z.ai/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5eb9349b-79fc-421d-af27-0216ba5f3794",
+    "name": "Z.AI API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Z.AI API available endpoints\n\nContact Support:\n Name: Z.AI Developers\n Email: user_feedback@z.ai",
+      "type": "text/plain"
+    }
+  }
+}
