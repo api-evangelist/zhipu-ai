@@ -6,7 +6,7 @@ description: >-
   Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM (General Language Model) family.
   The Z.ai open platform exposes chat completions, vision, image generation, video generation, web search, audio
   transcription, embeddings, fine-tuning, and agent APIs across the GLM-5, GLM-4.7, GLM-4.6, and GLM-4.5 model series.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AI
   - LLM
@@ -24,7 +24,7 @@ apis:
       OpenAI-compatible chat completions plus vision, image, video, web search, audio, embeddings, fine-tuning, and
       agent endpoints. International base URL https://api.z.ai/api; legacy China base URL
       https://open.bigmodel.cn/api/paas/v4.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.z.ai/api-reference/llm/chat-completion
     baseURL: https://api.z.ai/api
     tags:
