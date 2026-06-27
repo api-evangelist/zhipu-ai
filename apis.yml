@@ -42,7 +42,7 @@ apis:
         url: https://docs.z.ai
       - type: OpenAPI
         url: openapi/zhipu-ai-openapi.json
-      - type: SignUp
+      - type: Signup
         url: https://z.ai
       - type: Pricing
         url: https://docs.z.ai/guides/overview/pricing
@@ -67,7 +67,7 @@ common:
     url: finops/zhipu-ai-finops.yml
   - type: Integrations
     url: https://www.zhipuai.cn/integrations
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.z.ai/llms.txt
 integrations:
   - name: Z.AI
