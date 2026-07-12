@@ -49,6 +49,12 @@ apis:
       - type: LegacyBaseURL
         url: https://open.bigmodel.cn/api/paas/v4
 common:
+  - type: VulnerabilityDisclosure
+    url: security/zhipu-ai-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/zhipu-ai-domain-security.yml
+  - type: Authentication
+    url: authentication/zhipu-ai-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/zai-org
   - type: LinkedIn

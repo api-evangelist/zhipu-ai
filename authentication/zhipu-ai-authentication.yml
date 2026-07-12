@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/zhipu-ai-openapi.json
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'Use the following format for authentication: Bearer [<your api key>](https://z.ai/manage-apikey/apikey-list)'
+  sources:
+  - openapi/zhipu-ai-openapi.json
