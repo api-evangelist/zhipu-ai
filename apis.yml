@@ -49,6 +49,8 @@ apis:
       - type: LegacyBaseURL
         url: https://open.bigmodel.cn/api/paas/v4
 common:
+  - type: AgenticAccess
+    url: agentic-access/zhipu-ai-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/zhipu-ai-vulnerability-disclosure.yml
   - type: DomainSecurity
