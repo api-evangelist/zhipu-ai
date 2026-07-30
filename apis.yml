@@ -6,7 +6,20 @@ description: >-
   Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM (General Language Model) family.
   The Z.ai open platform exposes chat completions, vision, image generation, video generation, web search, audio
   transcription, embeddings, fine-tuning, and agent APIs across the GLM-5, GLM-4.7, GLM-4.6, and GLM-4.5 model series.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zhipu-ai.png
 tags:
   - AI
   - LLM
@@ -18,36 +31,60 @@ created: '2026-05-08'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: zhipu-ai:platform
-    name: Z.ai Open Platform API
-    description: >-
-      OpenAI-compatible chat completions plus vision, image, video, web search, audio, embeddings, fine-tuning, and
-      agent endpoints. International base URL https://api.z.ai/api; legacy China base URL
-      https://open.bigmodel.cn/api/paas/v4.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.z.ai/api-reference/llm/chat-completion
-    baseURL: https://api.z.ai/api
-    tags:
-      - AI
-      - LLM
-      - Chat Completions
-      - Vision
-      - Image Generation
-      - Video Generation
-      - Embeddings
-      - Fine Tuning
-      - Web Search
-    properties:
-      - type: Documentation
-        url: https://docs.z.ai
-      - type: OpenAPI
-        url: openapi/zhipu-ai-openapi.json
-      - type: Signup
-        url: https://z.ai
-      - type: Pricing
-        url: https://docs.z.ai/guides/overview/pricing
-      - type: LegacyBaseURL
-        url: https://open.bigmodel.cn/api/paas/v4
+- aid: zhipu-ai:zhipu-ai-agents-api
+  name: Zhipu AI Agents API
+  description: The Agents API from Zhipu AI — 3 operation(s) for agents.
+  humanURL: https://docs.z.ai/api-reference/llm/chat-completion
+  baseURL: https://api.z.ai/api
+  tags:
+  - Agents
+  properties:
+  - type: OpenAPI
+    url: openapi/zhipu-ai-agents-api-openapi.yml
+  - type: Documentation
+    url: https://docs.z.ai
+  - type: Signup
+    url: https://z.ai
+  - type: Pricing
+    url: https://docs.z.ai/guides/overview/pricing
+  - type: LegacyBaseURL
+    url: https://open.bigmodel.cn/api/paas/v4
+- aid: zhipu-ai:zhipu-ai-paas-api
+  name: Zhipu AI Paas API
+  description: The Paas API from Zhipu AI — 10 operation(s) for paas.
+  humanURL: https://docs.z.ai/api-reference/llm/chat-completion
+  baseURL: https://api.z.ai/api
+  tags:
+  - Paas
+  properties:
+  - type: OpenAPI
+    url: openapi/zhipu-ai-paas-api-openapi.yml
+  - type: Documentation
+    url: https://docs.z.ai
+  - type: Signup
+    url: https://z.ai
+  - type: Pricing
+    url: https://docs.z.ai/guides/overview/pricing
+  - type: LegacyBaseURL
+    url: https://open.bigmodel.cn/api/paas/v4
+- aid: zhipu-ai:zhipu-ai-tools-api-api
+  name: Zhipu AI Tools API API
+  description: The Tools API API from Zhipu AI — 1 operation(s) for tools api.
+  humanURL: https://docs.z.ai/api-reference/llm/chat-completion
+  baseURL: https://api.z.ai/api
+  tags:
+  - Tools API
+  properties:
+  - type: OpenAPI
+    url: openapi/zhipu-ai-tools-api-api-openapi.yml
+  - type: Documentation
+    url: https://docs.z.ai
+  - type: Signup
+    url: https://z.ai
+  - type: Pricing
+    url: https://docs.z.ai/guides/overview/pricing
+  - type: LegacyBaseURL
+    url: https://open.bigmodel.cn/api/paas/v4
 common:
   - type: AgenticAccess
     url: agentic-access/zhipu-ai-agentic-access.yml
