@@ -1,0 +1,18 @@
+{
+  "provider": "zhipu-ai",
+  "sources": [
+    "zhipu-ai-agents-api-openapi.yml",
+    "zhipu-ai-paas-api-openapi.yml",
+    "zhipu-ai-tools-api-api-openapi.yml"
+  ],
+  "outputs": [
+    "zhipu-ai-agents-api-openapi.yml",
+    "zhipu-ai-paas-api-openapi.yml",
+    "zhipu-ai-tools-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
