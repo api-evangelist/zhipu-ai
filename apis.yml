@@ -29,7 +29,7 @@ tags:
   - Multimodal
 created: '2026-05-08'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: zhipu-ai:zhipu-ai-agents-api
   name: Zhipu AI Agents API
