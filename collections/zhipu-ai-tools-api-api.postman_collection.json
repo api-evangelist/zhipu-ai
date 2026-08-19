@@ -1,0 +1,197 @@
+{
+  "item": [
+    {
+      "id": "4af24b8c-c0d8-4a30-bb37-ec25f5ea5638",
+      "name": "Tools API",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3514b13d-1c17-48ac-bd4f-d42e2a4ad20e",
+          "name": "Web Reader",
+          "request": {
+            "name": "Web Reader",
+            "description": {
+              "content": "Reads and parses the content of the specified URL. Supports selectable return formats, cache control, image retention, and summary options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "paas",
+                "v4",
+                "reader"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url\": \"<string>\",\n  \"timeout\": 20,\n  \"no_cache\": false,\n  \"return_format\": \"markdown\",\n  \"retain_images\": true,\n  \"no_gfm\": false,\n  \"keep_img_data_url\": false,\n  \"with_images_summary\": false,\n  \"with_links_summary\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e551af5-89cd-4f4b-9faf-343bceaf6d16",
+              "name": "Processing successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "paas",
+                    "v4",
+                    "reader"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"https://www.example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"created\": 1348,\n  \"request_id\": \"string\",\n  \"model\": \"string\",\n  \"reader_result\": {\n    \"content\": \"string\",\n    \"description\": \"string\",\n    \"title\": \"string\",\n    \"url\": \"string\",\n    \"external\": {\n      \"stylesheet\": {\n        \"key_0\": {\n          \"type\": \"string\"\n        },\n        \"key_1\": {\n          \"type\": \"string\"\n        }\n      }\n    },\n    \"metadata\": {\n      \"keywords\": \"string\",\n      \"viewport\": \"string\",\n      \"description\": \"string\",\n      \"format-detection\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "33f7e211-1e61-45c7-819e-2ca81ce0e85b",
+              "name": "The request has failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "paas",
+                    "v4",
+                    "reader"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"url\": \"https://www.example.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 3046,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.z.ai/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "cfc8bb90-9437-41c5-8f97-1b271834b69b",
+    "name": "Z.AI Agents Tools API API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Z.AI API available endpoints\n\nContact Support:\n Name: Z.AI Developers\n Email: user_feedback@z.ai",
+      "type": "text/plain"
+    }
+  }
+}

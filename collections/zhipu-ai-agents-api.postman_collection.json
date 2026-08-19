@@ -1,0 +1,560 @@
+{
+  "item": [
+    {
+      "id": "0e254ba8-1d6e-46b6-8676-e932af1417a5",
+      "name": "Agents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5146a57d-b806-42b3-8ed8-4115036726e3",
+          "name": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive high-quality translation results. \n\n Popular Special Effects Videos: Popular special effects videos are intelligent templates launched based on trending features from pan-entertainment platforms, designed to precisely adapt to short video creative production needs. Currently, three effect templates are available: `French Kiss`, `Body Shake Dance`, and `Sexy Me`. After selecting a template, users only need to upload an image and enter corresponding prompts to generate a special effects video. \n\n GLM Slide/Poster Agent: An intelligent creation agent built for working people and creators. It goes beyond traditional engineering-style assembly tools—supporting one-click generation of slides or posters from natural language instructions. By natively integrating content generation with layout aesthetics and design conventions, it helps you quickly produce polished, professional-grade materials while lowering design barriers and boosting creative efficiency.",
+          "request": {
+            "name": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive high-quality translation results. \n\n Popular Special Effects Videos: Popular special effects videos are intelligent templates launched based on trending features from pan-entertainment platforms, designed to precisely adapt to short video creative production needs. Currently, three effect templates are available: `French Kiss`, `Body Shake Dance`, and `Sexy Me`. After selecting a template, users only need to upload an image and enter corresponding prompts to generate a special effects video. \n\n GLM Slide/Poster Agent: An intelligent creation agent built for working people and creators. It goes beyond traditional engineering-style assembly tools—supporting one-click generation of slides or posters from natural language instructions. By natively integrating content generation with layout aesthetics and design conventions, it helps you quickly produce polished, professional-grade materials while lowering design barriers and boosting creative efficiency.",
+            "description": {
+              "content": "General Translation: General Translation API provides large model-based multilingual translation services, including general translation, paraphrase translation, two-step translation, and three-pass translation strategies. It supports automatic language detection, glossary customization, translation suggestions, and streaming output. Users only need to call the Translation API, input the text to be processed, specify the source language (auto-detection supported) and target language to receive high-quality translation results. \n\n Popular Special Effects Videos: Popular special effects videos are intelligent templates launched based on trending features from pan-entertainment platforms, designed to precisely adapt to short video creative production needs. Currently, three effect templates are available: `French Kiss`, `Body Shake Dance`, and `Sexy Me`. After selecting a template, users only need to upload an image and enter corresponding prompts to generate a special effects video. \n\n GLM Slide/Poster Agent: An intelligent creation agent built for working people and creators. It goes beyond traditional engineering-style assembly tools—supporting one-click generation of slides or posters from natural language instructions. By natively integrating content generation with layout aesthetics and design conventions, it helps you quickly produce polished, professional-grade materials while lowering design barriers and boosting creative efficiency.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "agents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"custom_variables\": {\n    \"source_lang\": \"<string>\",\n    \"target_lang\": \"<string>\",\n    \"glossary\": \"<string>\",\n    \"strategy\": \"<string>\",\n    \"strategy_config\": {\n      \"general\": {\n        \"suggestion\": \"<string>\"\n      },\n      \"cot\": {\n        \"reason_lang\": \"<string>\"\n      }\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ff53ffcd-070f-4a7e-a891-185dca0ef8fb",
+              "name": "Processing successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Accept-Language",
+                    "value": "en-US,en",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"custom_variables\": {\n    \"source_lang\": \"<string>\",\n    \"target_lang\": \"<string>\",\n    \"glossary\": \"<string>\",\n    \"strategy\": \"<string>\",\n    \"strategy_config\": {\n      \"general\": {\n        \"suggestion\": \"<string>\"\n      },\n      \"cot\": {\n        \"reason_lang\": \"<string>\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<string>\",\n  \"agent_id\": \"<string>\",\n  \"choices\": [\n    {\n      \"index\": 123,\n      \"finish_reason\": \"<string>\",\n      \"messages\": [\n        {\n          \"role\": \"<string>\",\n          \"content\": {\n            \"text\": \"<string>\",\n            \"type\": \"<string>\"\n          }\n        }\n      ]\n    }\n  ],\n  \"usage\": {\n    \"prompt_tokens\": 123,\n    \"completion_tokens\": 123,\n    \"total_tokens\": 123,\n    \"total_calls\": 123\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d19daaa8-df5b-44c4-b271-0bbd3d1ffb88",
+              "name": "The request has failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "agents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Accept-Language",
+                    "value": "en-US,en",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"<string>\",\n  \"messages\": [\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        },\n        {\n          \"type\": \"text\",\n          \"text\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"stream\": \"<boolean>\",\n  \"custom_variables\": {\n    \"source_lang\": \"<string>\",\n    \"target_lang\": \"<string>\",\n    \"glossary\": \"<string>\",\n    \"strategy\": \"<string>\",\n    \"strategy_config\": {\n      \"general\": {\n        \"suggestion\": \"<string>\"\n      },\n      \"cot\": {\n        \"reason_lang\": \"<string>\"\n      }\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 123,\n  \"message\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6a4a3fc-6a5b-40c5-b671-5a2f92837232",
+          "name": "This endpoint is used to query the result of an asynchronous request.",
+          "request": {
+            "name": "This endpoint is used to query the result of an asynchronous request.",
+            "description": {
+              "content": "This endpoint is used to query the result of an asynchronous request.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "agents",
+                "async-result"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"async_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1a6a3747-1d45-4421-826c-12c4812a2732",
+              "name": "Processing successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "agents",
+                    "async-result"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Accept-Language",
+                    "value": "en-US,en",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"<string>\",\n  \"async_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"agent_id\": \"string\",\n  \"async_id\": \"string\",\n  \"choices\": [\n    {\n      \"index\": 337,\n      \"finish_reason\": \"string\",\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"index\": 1666,\n      \"finish_reason\": \"string\",\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"video_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9bc9600b-164c-497e-a7d4-43e6bc6c53b0",
+              "name": "The request has failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "agents",
+                    "async-result"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Accept-Language",
+                    "value": "en-US,en",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"<string>\",\n  \"async_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"agent_id\": \"string\",\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05ecc41c-e8da-42e6-af09-880573fc13ee",
+          "name": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent",
+          "request": {
+            "name": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent",
+            "description": {
+              "content": "This endpoint is used to query the agent conversation history.Only support slides_glm_agent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "agents",
+                "conversation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "Accept-Language",
+                "value": "en-US,en",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"agent_id\": \"<string>\",\n  \"conversation_id\": \"<string>\",\n  \"custom_variables\": {\n    \"include_pdf\": \"<boolean>\",\n    \"pages\": [\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      },\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3a1d348-a717-4120-8a1c-3d45f5c10aed",
+              "name": "Processing successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "agents",
+                    "conversation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Accept-Language",
+                    "value": "en-US,en",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"<string>\",\n  \"conversation_id\": \"<string>\",\n  \"custom_variables\": {\n    \"include_pdf\": \"<boolean>\",\n    \"pages\": [\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      },\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"conversation_id\": \"string\",\n  \"agent_id\": \"string\",\n  \"choices\": [\n    {\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"message\": [\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        },\n        {\n          \"role\": \"string\",\n          \"content\": [\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            },\n            {\n              \"type\": \"string\",\n              \"tag_cn\": \"string\",\n              \"tag_en\": \"string\",\n              \"file_url\": \"string\",\n              \"image_url\": \"string\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc5beaa8-8b8d-4f9b-ac99-77ce79b07668",
+              "name": "The request has failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "agents",
+                    "conversation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "Accept-Language",
+                    "value": "en-US,en",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"agent_id\": \"<string>\",\n  \"conversation_id\": \"<string>\",\n  \"custom_variables\": {\n    \"include_pdf\": \"<boolean>\",\n    \"pages\": [\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      },\n      {\n        \"position\": \"<number>\",\n        \"width\": \"<number>\",\n        \"height\": \"<number>\"\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"code\": 2294,\n  \"message\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.z.ai/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0e989896-233b-4b1a-8e3b-45711621e31b",
+    "name": "Z.AI Agents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Z.AI API available endpoints\n\nContact Support:\n Name: Z.AI Developers\n Email: user_feedback@z.ai",
+      "type": "text/plain"
+    }
+  }
+}

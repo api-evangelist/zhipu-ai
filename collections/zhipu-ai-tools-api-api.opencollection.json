@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Z.AI Agents Tools API API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tools API",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Web Reader",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.z.ai/api/paas/v4/reader",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Reads and parses the content of the specified URL. Supports selectable return formats, cache control, image retention, and summary options."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
