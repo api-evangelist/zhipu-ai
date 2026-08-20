@@ -21,6 +21,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zhipu-ai.png
 tags:
+  - Artificial Intelligence
+  - LLM
+  - Inference
+  - GLM
+  - ChatGLM
+  - Multi-Modal
+tags_raw:
   - AI
   - LLM
   - Inference
@@ -55,6 +62,8 @@ apis:
   humanURL: https://docs.z.ai/api-reference/llm/chat-completion
   baseURL: https://api.z.ai/api
   tags:
+  - Platform-as-a-Service
+  tags_raw:
   - Paas
   properties:
   - type: OpenAPI
