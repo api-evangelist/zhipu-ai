@@ -38,7 +38,7 @@ tags:
   - Inference
   - GLM
   - ChatGLM
-  - Multi-Modal
+  - Multimodal
 tags_raw:
   - AI
   - LLM
@@ -74,7 +74,7 @@ apis:
   humanURL: https://docs.z.ai/api-reference/llm/chat-completion
   baseURL: https://api.z.ai/api
   tags:
-  - Platform-as-a-Service
+  - Paas
   tags_raw:
   - Paas
   properties:
