@@ -68,26 +68,6 @@ apis:
     url: https://docs.z.ai/guides/overview/pricing
   - type: LegacyBaseURL
     url: https://open.bigmodel.cn/api/paas/v4
-- aid: zhipu-ai:zhipu-ai-paas-api
-  name: Zhipu AI Paas API
-  description: The Paas API from Zhipu AI — 10 operation(s) for paas.
-  humanURL: https://docs.z.ai/api-reference/llm/chat-completion
-  baseURL: https://api.z.ai/api
-  tags:
-  - Platform-as-a-Service
-  tags_raw:
-  - Paas
-  properties:
-  - type: OpenAPI
-    url: openapi/zhipu-ai-paas-api-openapi.yml
-  - type: Documentation
-    url: https://docs.z.ai
-  - type: Signup
-    url: https://z.ai
-  - type: Pricing
-    url: https://docs.z.ai/guides/overview/pricing
-  - type: LegacyBaseURL
-    url: https://open.bigmodel.cn/api/paas/v4
 - aid: zhipu-ai:zhipu-ai-tools-api-api
   name: Zhipu AI Tools API
   description: The Tools API API from Zhipu AI — 1 operation(s) for tools api.
@@ -98,6 +78,24 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/zhipu-ai-tools-api-api-openapi.yml
+  - type: Documentation
+    url: https://docs.z.ai
+  - type: Signup
+    url: https://z.ai
+  - type: Pricing
+    url: https://docs.z.ai/guides/overview/pricing
+  - type: LegacyBaseURL
+    url: https://open.bigmodel.cn/api/paas/v4
+- aid: zhipu-ai:zhipu-ai-paa-s-api
+  name: Zhipu AI Paa S API
+  description: The Paa S API from Zhipu AI — 10 operation(s) for paa s.
+  humanURL: https://docs.z.ai/api-reference/llm/chat-completion
+  baseURL: https://api.z.ai/api
+  tags:
+  - Paa S
+  properties:
+  - type: OpenAPI
+    url: openapi/zhipu-ai-paa-s-api-openapi.yml
   - type: Documentation
     url: https://docs.z.ai
   - type: Signup
