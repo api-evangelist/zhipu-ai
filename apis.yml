@@ -2,10 +2,10 @@ aid: zhipu-ai
 url: https://raw.githubusercontent.com/api-evangelist/zhipu-ai/refs/heads/main/apis.yml
 name: Zhipu AI
 kind: company
-description: >-
-  Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM (General Language Model) family.
-  The Z.ai open platform exposes chat completions, vision, image generation, video generation, web search, audio
-  transcription, embeddings, fine-tuning, and agent APIs across the GLM-5, GLM-4.7, GLM-4.6, and GLM-4.5 model series.
+description: Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM (General
+  Language Model) family. The Z.ai open platform exposes chat completions, vision, image generation, video
+  generation, web search, audio transcription, embeddings, fine-tuning, and agent APIs across the GLM-5,
+  GLM-4.7, GLM-4.6, and GLM-4.5 model series.
 deliveryModel:
   model: saas
   open_source: false
@@ -33,21 +33,21 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zhipu-ai.png
 tags:
-  - Artificial Intelligence
-  - LLM
-  - Inference
-  - GLM
-  - ChatGLM
-  - Multi-Modal
+- Artificial Intelligence
+- LLM
+- Inference
+- GLM
+- ChatGLM
+- Multi-Modal
 tags_raw:
-  - AI
-  - LLM
-  - Inference
-  - GLM
-  - ChatGLM
-  - Multimodal
+- AI
+- LLM
+- Inference
+- GLM
+- ChatGLM
+- Multimodal
 created: '2026-05-08'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: zhipu-ai:zhipu-ai-agents-api
@@ -89,7 +89,7 @@ apis:
   - type: LegacyBaseURL
     url: https://open.bigmodel.cn/api/paas/v4
 - aid: zhipu-ai:zhipu-ai-tools-api-api
-  name: Zhipu AI Tools API API
+  name: Zhipu AI Tools API
   description: The Tools API API from Zhipu AI — 1 operation(s) for tools api.
   humanURL: https://docs.z.ai/api-reference/llm/chat-completion
   baseURL: https://api.z.ai/api
@@ -107,69 +107,69 @@ apis:
   - type: LegacyBaseURL
     url: https://open.bigmodel.cn/api/paas/v4
 common:
-  - type: AgenticAccess
-    url: agentic-access/zhipu-ai-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/zhipu-ai-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/zhipu-ai-domain-security.yml
-  - type: Authentication
-    url: authentication/zhipu-ai-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/zai-org
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/zhipuai
-  - type: Website
-    url: https://www.zhipuai.cn/
-  - type: AlternateWebsite
-    url: https://z.ai
-  - type: Documentation
-    url: https://docs.z.ai
-  - type: Plans
-    url: plans/zhipu-ai-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/zhipu-ai-rate-limits.yml
-  - type: FinOps
-    url: finops/zhipu-ai-finops.yml
-  - type: Integrations
-    url: https://www.zhipuai.cn/integrations
-  - type: LlmsText
-    url: https://docs.z.ai/llms.txt
+- type: AgenticAccess
+  url: agentic-access/zhipu-ai-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/zhipu-ai-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/zhipu-ai-domain-security.yml
+- type: Authentication
+  url: authentication/zhipu-ai-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/zai-org
+- type: LinkedIn
+  url: https://www.linkedin.com/company/zhipuai
+- type: Website
+  url: https://www.zhipuai.cn/
+- type: AlternateWebsite
+  url: https://z.ai
+- type: Documentation
+  url: https://docs.z.ai
+- type: Plans
+  url: plans/zhipu-ai-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/zhipu-ai-rate-limits.yml
+- type: FinOps
+  url: finops/zhipu-ai-finops.yml
+- type: Integrations
+  url: https://www.zhipuai.cn/integrations
+- type: LlmsText
+  url: https://docs.z.ai/llms.txt
 integrations:
-  - name: Z.AI
-  - name: Animation
-  - name: Send
-  - name: AI Slides
-  - name: Full Stack
-  - name: Magic Design
-  - name: Help Me Write
-  - name: ad
-  - name: GLM-5-Turbo
-  - name: GLM-5
-  - name: GLM-4.6V
-  - name: AutoGLM
-  - name: GLM-4.5V
-  - name: translate
-  - name: 海报
-  - name: 模型微调
-  - name: AI 搜索工具
-  - name: AutoClaw
-  - name: 智谱清言
-  - name: 智谱学习中心
-  - name: Zread.ai
-  - name: AMiner
-  - name: 智谱AI输入法
-  - name: business
-  - name: 智谱首份业绩报告发布，探索AGI智能上界
-  - name: 智谱（02513.HK）公布2025年度业绩发布会安排
-  - name: 中关村自主大模型产业联盟第一次会员大会 结果公示
-  - name: GLM-PC 基座模型，CogAgent-9B 开源
-  - name: Agent 新进展：跨 app、跨设备、更多玩法｜智谱 Agent OpenDay
-  - name: 智谱与英特尔深化智能生态合作，落地端侧智谱清言和CodeGeeX智能编程助手
-  - name: wechat
-  - name: WeChat QR Code
-  - name: github
-  - name: huggingface
+- name: Z.AI
+- name: Animation
+- name: Send
+- name: AI Slides
+- name: Full Stack
+- name: Magic Design
+- name: Help Me Write
+- name: ad
+- name: GLM-5-Turbo
+- name: GLM-5
+- name: GLM-4.6V
+- name: AutoGLM
+- name: GLM-4.5V
+- name: translate
+- name: 海报
+- name: 模型微调
+- name: AI 搜索工具
+- name: AutoClaw
+- name: 智谱清言
+- name: 智谱学习中心
+- name: Zread.ai
+- name: AMiner
+- name: 智谱AI输入法
+- name: business
+- name: 智谱首份业绩报告发布，探索AGI智能上界
+- name: 智谱（02513.HK）公布2025年度业绩发布会安排
+- name: 中关村自主大模型产业联盟第一次会员大会 结果公示
+- name: GLM-PC 基座模型，CogAgent-9B 开源
+- name: Agent 新进展：跨 app、跨设备、更多玩法｜智谱 Agent OpenDay
+- name: 智谱与英特尔深化智能生态合作，落地端侧智谱清言和CodeGeeX智能编程助手
+- name: wechat
+- name: WeChat QR Code
+- name: github
+- name: huggingface
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
