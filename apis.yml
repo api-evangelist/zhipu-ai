@@ -92,6 +92,8 @@ apis:
   humanURL: https://docs.z.ai/api-reference/llm/chat-completion
   baseURL: https://api.z.ai/api
   tags:
+  - Platform-as-a-Service
+  tags_raw:
   - Paa S
   properties:
   - type: OpenAPI
