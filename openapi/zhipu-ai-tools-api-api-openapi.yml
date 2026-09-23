@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Z.AI Agents Tools API API
+  title: Z.AI Tools API
   description: Z.AI API available endpoints
   license:
     name: Z.AI Developer Agreement and Policy
@@ -47,22 +47,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+      operationId: postPaasV4Reader
+      x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      required:
-      - code
-      - message
-      type: object
-      description: The request has failed.
-      properties:
-        code:
-          type: integer
-          format: int32
-          description: Error code.
-        message:
-          type: string
-          description: Error message.
     ReaderRequest:
       type: object
       properties:
@@ -164,6 +152,20 @@ components:
                 format-detection:
                   type: string
                   description: Format detection settings, e.g., `telephone=no`
+    Error:
+      required:
+      - code
+      - message
+      type: object
+      description: The request has failed.
+      properties:
+        code:
+          type: integer
+          format: int32
+          description: Error code.
+        message:
+          type: string
+          description: Error message.
   securitySchemes:
     bearerAuth:
       type: http

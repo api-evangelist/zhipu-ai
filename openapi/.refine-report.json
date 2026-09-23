@@ -1,18 +1,43 @@
 {
   "provider": "zhipu-ai",
   "sources": [
-    "zhipu-ai-agents-api-openapi.yml",
-    "zhipu-ai-paas-api-openapi.yml",
-    "zhipu-ai-tools-api-api-openapi.yml"
+    "_original/zhipu-ai-openapi.json"
   ],
   "outputs": [
     "zhipu-ai-agents-api-openapi.yml",
     "zhipu-ai-paas-api-openapi.yml",
     "zhipu-ai-tools-api-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "zhipu-ai-openapi.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/chat/completions -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/videos/generations -> Paas",
+    "zhipu-ai-openapi.json: tagged paths GET /paas/v4/async-result/{id} -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/images/generations -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/async/images/generations -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/audio/transcriptions -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/tokenizer -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/layout_parsing -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/web_search -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /paas/v4/files -> Paas",
+    "zhipu-ai-openapi.json: tagged paths POST /v1/agents -> Agents",
+    "zhipu-ai-openapi.json: tagged paths POST /v1/agents/async-result -> Agents",
+    "zhipu-ai-openapi.json: tagged paths POST /v1/agents/conversation -> Agents",
+    "zhipu-ai-openapi.json: declared missing tag: Agents",
+    "zhipu-ai-openapi.json: declared missing tag: Paas",
+    "zhipu-ai-openapi.json: declared missing tag: Tools API",
+    "superseded outputs removed: zhipu-ai-paa-s-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 3 total)"
+  ],
+  "skipped": [
+    "zhipu-ai-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zhipu-ai-paa-s-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zhipu-ai-tools-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
