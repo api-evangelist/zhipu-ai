@@ -39,6 +39,7 @@ tags:
 - GLM
 - ChatGLM
 - Multi-Modal
+- Foundation Models
 tags_raw:
 - AI
 - LLM
@@ -46,6 +47,7 @@ tags_raw:
 - GLM
 - ChatGLM
 - Multimodal
+- Foundation Models
 created: '2026-05-08'
 modified: '2026-09-16'
 specificationVersion: '0.23'
@@ -92,6 +94,8 @@ apis:
   humanURL: https://docs.z.ai/api-reference/llm/chat-completion
   baseURL: https://api.z.ai/api
   tags:
+  - Platform-as-a-Service
+  tags_raw:
   - Paa S
   properties:
   - type: OpenAPI
