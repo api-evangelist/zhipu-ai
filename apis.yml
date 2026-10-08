@@ -107,6 +107,8 @@ apis:
   - type: LegacyBaseURL
     url: https://open.bigmodel.cn/api/paas/v4
 common:
+- type: Pricing
+  url: https://docs.z.ai/guides/overview/pricing
 - url: https://www.zhipuai.cn/blog
   type: Blog
 - type: AgenticAccess
