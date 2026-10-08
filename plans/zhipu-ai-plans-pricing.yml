@@ -1,120 +1,206 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
-provider: Zhipu AI
-providerId: zhipu-ai
-created: '2026-05-08'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-08, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-08'
-reconciled: true
-tags:
-- AI
-- LLM
-- GLM
-- Plans
-description: >-
-  Z.ai offers two commercial models: pay-as-you-go API consumption priced per million tokens
-  per model, and the GLM Coding Plan subscription with usage allowances. Free tiers exist for
-  GLM-4.7-Flash, GLM-4.5-Flash, and several vision models.
-notes: >-
-  Pricing as of May 2026 - GLM-5.1 is the highest at $1.40/M input tokens, GLM-4.7-FlashX at
-  $0.07/M, GLM-OCR at $0.03/M. Image gen $0.01-$0.015 per image, video $0.20-$0.40 per video,
-  web search $0.01 per call, audio transcription $0.03/M tokens, agents $0.20-$3.00/M tokens.
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://docs.z.ai/guides/overview/pricing
 sources:
 - https://docs.z.ai/guides/overview/pricing
-- https://docs.z.ai/devpack/overview
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Token/usage-based model pricing in USD; cached input storage limited-time free.
+plan_count: 29
+currency: USD
 plans:
-- id: zhipu-ai-pay-as-you-go
-  name: Pay As You Go
-  type: usage
-  description: Per-token consumption billed against prepaid balance for API users.
-  entries:
-  - label: Chat Completions Input/Output
-    name: chat_tokens
-    type: usage
-    metric: tokens
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1000000
-    price: see https://docs.z.ai/guides/overview/pricing
-    userMultiplied: false
-  - label: Image Generation
-    name: image_count
-    type: usage
-    metric: images
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: '0.01-0.015 USD per image'
-    userMultiplied: false
-  - label: Video Generation
-    name: video_count
-    type: usage
-    metric: videos
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: '0.20-0.40 USD per video'
-    userMultiplied: false
-  - label: Web Search Tool
-    name: web_search
-    type: usage
-    metric: calls
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: '0.01 USD per call'
-    userMultiplied: false
-  elements:
-  - name: GLM-5.1, GLM-5-Turbo, GLM-5
-  - name: GLM-4.7, GLM-4.7-FlashX, GLM-4.7-Flash (free)
-  - name: GLM-4.6, GLM-4.5, GLM-4.5-Air/X/AirX/Flash
-  - name: Vision models GLM-5V-Turbo, GLM-4.6V, GLM-4.5V
-  - name: GLM-Image, CogView-4
-  - name: GLM-OCR, audio transcription, embeddings
-- id: zhipu-ai-glm-coding-plan
-  name: GLM Coding Plan
-  type: subscription
-  description: Monthly subscription bundling usage allowances for AI-coding integrations.
-  entries:
-  - label: Subscription
-    name: coding_subscription
-    type: subscription
-    metric: bundle
-    limit: -1
-    timeFrame: monthly
-    geo: global
-    unit: 1
-    price: see plan tiers
-    userMultiplied: false
-  elements:
-  - name: 5-hour and weekly usage windows
-  - name: Peak/off-peak quota multipliers (1x off-peak, 2-3x peak)
-  - name: Free GLM-4.7-Flash and GLM-4.5-Flash usage
-- id: zhipu-ai-free
-  name: Free Tier (Flash Models)
-  type: free
-  description: Free access to designated Flash variants.
-  entries:
-  - label: GLM-4.7-Flash
-    name: glm_47_flash_free
-    type: free
-    metric: tokens
-    limit: -1
-    timeFrame: usage
-    geo: global
-    unit: 1
-    price: '0.00'
-    userMultiplied: false
-  elements:
-  - name: GLM-4.7-Flash
-  - name: GLM-4.5-Flash
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+- name: GLM-5.3-Flash
+  price_text: $0.15
+  price: 0.15
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.03; Output $0.50; Cached Input Storage Limited-time Free
+- name: GLM-5.3-FlashX
+  price_text: $0.37
+  price: 0.37
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.075; Output $1.25
+- name: GLM-5.3
+  price_text: $1.4
+  price: 1.4
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.26; Output $4.4
+- name: GLM-5.2
+  price_text: $1.4
+  price: 1.4
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.26; Output $4.4
+- name: GLM-5.1
+  price_text: $1.4
+  price: 1.4
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Output $4.4
+- name: GLM-5
+  price_text: $1
+  price: 1
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.2; Output $3.2
+- name: GLM-4.7
+  price_text: $0.6
+  price: 0.6
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.11; Output $2.2
+- name: GLM-4.7-FlashX
+  price_text: $0.07
+  price: 0.07
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.01; Output $0.4
+- name: GLM-4.6
+  price_text: $0.6
+  price: 0.6
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Output $2.2
+- name: GLM-4.5
+  price_text: $0.6
+  price: 0.6
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Output $2.2
+- name: GLM-4.5-X
+  price_text: $2.2
+  price: 2.2
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.45; Output $8.9
+- name: GLM-4.5-Air
+  price_text: $0.2
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.03; Output $1.1
+- name: GLM-4.5-AirX
+  price_text: $1.1
+  price: 1.1
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.22; Output $4.5
+- name: GLM-4-32B-0414-128K
+  price_text: $0.1
+  price: 0.1
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Output $0.1
+- name: GLM-4.7-Flash
+  price_text: Free
+  period: per-use
+  unit: per 1M tokens
+- name: GLM-4.5-Flash
+  price_text: Free
+  period: per-use
+  unit: per 1M tokens
+- name: GLM-4.6V
+  price_text: $0.3
+  price: 0.3
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.05; Output $0.9
+- name: GLM-OCR
+  price_text: $0.03
+  price: 0.03
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Output $0.03
+- name: GLM-4.6V-FlashX
+  price_text: $0.04
+  price: 0.04
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.004; Output $0.4
+- name: GLM-4.5V
+  price_text: $0.6
+  price: 0.6
+  currency: USD
+  period: per-use
+  unit: per 1M tokens input
+  overage: Cached Input $0.11; Output $1.8
+- name: GLM-4.6V-Flash
+  price_text: Free
+  period: per-use
+  unit: per 1M tokens
+- name: Web Search (built-in tool)
+  price_text: $0.01 / use
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: per use
+- name: GLM-Image
+  price_text: $0.015
+  price: 0.015
+  currency: USD
+  period: per-use
+  unit: per image
+- name: CogView-4
+  price_text: $0.01
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: per image
+- name: CogVideoX-3
+  price_text: $0.2
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: per video
+- name: GLM-ASR-2512
+  price_text: $0.03 / MTok (equivalent to approximately $0.0024/minute)
+  currency: USD
+  period: per-use
+  unit: per MTok
+- name: GLM Slide/Poster Agent(beta)
+  price_text: $0.7 / MTok
+  price: 0.7
+  currency: USD
+  period: per-use
+  unit: per MTok
+- name: General-Purpose Translation
+  price_text: $3 / MTok
+  price: 3
+  currency: USD
+  period: per-use
+  unit: per MTok
+- name: Popular Special Effects Video Templates
+  price_text: $0.2 / video
+  price: 0.2
+  currency: USD
+  period: per-use
+  unit: per video
