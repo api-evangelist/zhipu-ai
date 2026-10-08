@@ -204,3 +204,245 @@ plans:
   currency: USD
   period: per-use
   unit: per video
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - metered
+  - subscription
+  units:
+  - token
+  plans:
+  - name: GLM-5.3-Flash
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-5.3-FlashX
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-5.3
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-5.2
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-5.1
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-5
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.7
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.7-FlashX
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.6
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.5
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.5-X
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.5-Air
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.5-AirX
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4-32B-0414-128K
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.7-Flash
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.5-Flash
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.6V
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-OCR
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.6V-FlashX
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.5V
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: GLM-4.6V-Flash
+    access: other
+    model: metered
+    model_how: derived
+    units:
+    - token
+    periods:
+    - other
+  - name: Web Search (built-in tool)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: GLM-Image
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: CogView-4
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: CogVideoX-3
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: GLM-ASR-2512
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: GLM Slide/Poster Agent(beta)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: General-Purpose Translation
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Popular Special Effects Video Templates
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
