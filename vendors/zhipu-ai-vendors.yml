@@ -1,0 +1,13 @@
+generated: '2026-09-25'
+method: probed
+source: 'reconcile-ptr-only.py: an MCP server the provider serves through a vendor implementation'
+registry: all/0-working/vendors.yml
+vendors:
+- vendor: mintlify
+  area: mcp-hosting
+  host: docs.z.ai
+  evidence: mcp:https://docs.z.ai/mcp
+  signal: mcp-handshake
+  confidence: high
+  kin_score:
+  - mcp_server

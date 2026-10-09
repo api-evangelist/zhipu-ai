@@ -1,0 +1,32 @@
+generated: '2026-09-25'
+method: probed
+source: https://docs.z.ai/mcp
+status: published
+server:
+  name: zhipu-ai
+  transport: http
+  url: https://docs.z.ai/mcp
+deployment:
+  mode: remote
+  endpoint: https://docs.z.ai/mcp
+  verified: probed
+  probe: live
+  checked: '2026-09-25'
+  source: 'docs-check 2026-09-25 (first-party, on the provider''s own domain: conventional path on the
+    provider''s own host; probed with JSON-RPC initialize; roadmap#590 #721)'
+  probe_why: 'initialize answered: serverInfo Overview - Z.AI DEVELOPER DOCUMENT 1.0.0'
+  server_info:
+    name: Overview - Z.AI DEVELOPER DOCUMENT
+    version: 1.0.0
+  protocol_version: '2025-06-18'
+  found_via: conventional path on the provider's own host
+  platform_shape: mintlify
+tools_note: No tool list captured. This manifest records a PROBED, reachable endpoint only; anonymous
+  tools/list was auth-gated or the server requires an initialize handshake this reachability probe does
+  not perform. Run signals/audit_mcp_authorship.py --probe to enumerate tools and settle platform-vs-provider
+  authorship. Do NOT derive a tool list from the OpenAPI and store it here -- that is a candidate manifest,
+  and it belongs under an X-MCPServerCandidate pointer.
+vendor:
+  vendor: mintlify
+  implementation: a mintlify-generated docs server on the provider's domain
+  ruling: 'Kin 2026-09-25: a vendor implementation counts for the provider'
