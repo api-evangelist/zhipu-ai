@@ -1,0 +1,11 @@
+{
+  "repo": "zhipu-ai",
+  "feeds": [
+    {
+      "source": "https://www.zhipuai.cn/blog",
+      "error": "URLError"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-10-10T13:15:00Z"
+}
