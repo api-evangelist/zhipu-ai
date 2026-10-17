@@ -181,6 +181,258 @@ components:
         message:
           type: string
           description: Error message.
+    SpecialEffectsVideosAgentRequest:
+      type: object
+      properties:
+        agent_id:
+          type: string
+          description: 'Agent ID: `vidu_template_agent`.'
+          enum:
+          - vidu_template_agent
+        request_id:
+          type: string
+          description: User-defined unique ID; used to distinguish requests. Auto-generated if omitted.
+        messages:
+          type: array
+          description: Session message body.
+          items:
+            type: object
+            properties:
+              role:
+                type: string
+                description: 'User input role: `user`'
+                example: user
+                default: user
+                enum:
+                - user
+              content:
+                type: array
+                description: Content list.
+                items:
+                  oneOf:
+                  - title: text
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        description: Specifies that this content is text.
+                        enum:
+                        - text
+                      text:
+                        type: string
+                        description: User text input.
+                    required:
+                    - type
+                    - text
+                  - title: image_url
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        description: Specifies that this content is an image URL.
+                        enum:
+                        - image_url
+                      image_url:
+                        type: string
+                        format: uri
+                        description: Image URL input.
+                    required:
+                    - type
+                    - image_url
+            required:
+            - role
+            - content
+        custom_variables:
+          type: object
+          description: Agent extension parameters.
+          properties:
+            template:
+              type: string
+              description: 'Effect template: `french_kiss`, `bodyshake`, or `sexy_me`.'
+              enum:
+              - french_kiss
+              - bodyshake
+              - sexy_me
+          required:
+          - template
+      required:
+      - agent_id
+      - messages
+    SpecialEffectsVideosAgentError:
+      type: object
+      properties:
+        status:
+          type: string
+          description: 'Status: `pending` (task created), `failed` (task creation failed).'
+        agent_id:
+          type: string
+          description: Agent ID
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Error message.
+    GlmSlideAgentConversationRequest:
+      type: object
+      properties:
+        agent_id:
+          type: string
+          description: Agent ID
+        conversation_id:
+          type: string
+          description: Conversation ID
+        custom_variables:
+          type: object
+          description: Custom variables
+          properties:
+            include_pdf:
+              type: boolean
+              description: Is export the pdf file
+            pages:
+              type: array
+              description: Slides Pages
+              items:
+                type: object
+                properties:
+                  position:
+                    type: number
+                    description: Slide Page Position
+                  width:
+                    type: number
+                    description: 'Slide Width, unit: pt'
+                  height:
+                    type: number
+                    description: 'Slide Height, unit: pt'
+    SpecialEffectsVideosAgentResponse:
+      allOf:
+      - type: object
+        properties:
+          async_id:
+            type: string
+            description: Asynchronous task ID.
+      - $ref: '#/components/schemas/SpecialEffectsVideosAgentError'
+    CommonAgentResultRequest:
+      type: object
+      properties:
+        agent_id:
+          type: string
+          description: 'Agent ID: `vidu_template_agent`.'
+        async_id:
+          type: string
+          description: Task ID from async response.
+    GlmSlideAgentRequest:
+      type: object
+      properties:
+        agent_id:
+          type: string
+          description: Agent ID.
+          enum:
+          - slides_glm_agent
+        stream:
+          type: boolean
+          default: true
+          description: False for sync calls (default). True for streaming.
+        conversation_id:
+          type: string
+          description: Conversation Id.
+        request_id:
+          type: string
+          description: User-defined unique ID; used to distinguish requests. Auto-generated if omitted.
+        messages:
+          type: array
+          description: Message body.
+          items:
+            type: object
+            properties:
+              role:
+                type: string
+                description: 'User input role: `user`'
+                example: user
+                default: user
+                enum:
+                - user
+              content:
+                type: array
+                description: Content list.
+                items:
+                  oneOf:
+                  - title: text
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        description: Specifies that this content is text.
+                        enum:
+                        - text
+                      text:
+                        type: string
+                        description: User text input.
+                    required:
+                    - type
+                    - text
+            required:
+            - role
+            - content
+      required:
+      - agent_id
+      - messages
+    GlmSlideAgentConversationResponse:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+          description: Conversation ID
+        agent_id:
+          type: string
+          description: Agent ID
+        choices:
+          type: array
+          description: Agent output.
+          items:
+            type: object
+            properties:
+              message:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    role:
+                      type: string
+                      description: 'Role: fixed as `assistant`.'
+                    content:
+                      type: array
+                      description: Content metadata
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            description: 'Response Content type: file_url、image_url'
+                          tag_cn:
+                            type: string
+                            description: CN Tag.
+                          tag_en:
+                            type: string
+                            description: EN Tag.
+                          file_url:
+                            type: string
+                            description: Output file_url content when type is file_url
+                          image_url:
+                            type: string
+                            description: Output image_url content when type is image_url
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Error message.
     TranslationAgentResponse:
       type: object
       properties:
@@ -238,15 +490,6 @@ components:
             total_calls:
               type: integer
               description: Total number of calls
-    CommonAgentResultRequest:
-      type: object
-      properties:
-        agent_id:
-          type: string
-          description: 'Agent ID: `vidu_template_agent`.'
-        async_id:
-          type: string
-          description: Task ID from async response.
     GlmSlideAgentResponse:
       type: object
       properties:
@@ -327,70 +570,50 @@ components:
             message:
               type: string
               description: Error message.
-    SpecialEffectsVideosAgentResponse:
-      allOf:
-      - type: object
-        properties:
-          async_id:
-            type: string
-            description: Asynchronous task ID.
-      - $ref: '#/components/schemas/SpecialEffectsVideosAgentError'
-    GlmSlideAgentRequest:
+    CommonAgentResultResponse:
       type: object
       properties:
+        status:
+          type: string
+          description: '`pending` (processing), `success` (completed), `failed` (failed).'
         agent_id:
           type: string
-          description: Agent ID.
-          enum:
-          - slides_glm_agent
-        stream:
-          type: boolean
-          default: true
-          description: False for sync calls (default). True for streaming.
-        conversation_id:
+          description: Agent ID
+        async_id:
           type: string
-          description: Conversation Id.
-        request_id:
-          type: string
-          description: User-defined unique ID; used to distinguish requests. Auto-generated if omitted.
-        messages:
+          description: Asynchronous task ID.
+        choices:
           type: array
-          description: Message body.
+          description: Agent output.
           items:
             type: object
             properties:
-              role:
+              index:
+                type: integer
+                description: Result index.
+              finish_reason:
                 type: string
-                description: 'User input role: `user`'
-                example: user
-                default: user
-                enum:
-                - user
-              content:
+                description: Reason for model inference termination. Can be ‘stop’, ‘tool_calls’, ‘length’, ‘sensitive’, or ‘network_error’.
+              message:
                 type: array
-                description: Content list.
                 items:
-                  oneOf:
-                  - title: text
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        description: Specifies that this content is text.
-                        enum:
-                        - text
-                      text:
-                        type: string
-                        description: User text input.
-                    required:
-                    - type
-                    - text
-            required:
-            - role
-            - content
-      required:
-      - agent_id
-      - messages
+                  type: object
+                  properties:
+                    role:
+                      type: string
+                      description: 'Role: fixed as `assistant`.'
+                    content:
+                      type: array
+                      description: Video file metadata
+                      items:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                            description: 'object type: `video_url`.'
+                          video_url:
+                            type: string
+                            description: MP4 video URL.
     TranslationAgentRequest:
       type: object
       properties:
@@ -745,229 +968,6 @@ components:
       required:
       - agent_id
       - messages
-    SpecialEffectsVideosAgentError:
-      type: object
-      properties:
-        status:
-          type: string
-          description: 'Status: `pending` (task created), `failed` (task creation failed).'
-        agent_id:
-          type: string
-          description: Agent ID
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Error message.
-    GlmSlideAgentConversationRequest:
-      type: object
-      properties:
-        agent_id:
-          type: string
-          description: Agent ID
-        conversation_id:
-          type: string
-          description: Conversation ID
-        custom_variables:
-          type: object
-          description: Custom variables
-          properties:
-            include_pdf:
-              type: boolean
-              description: Is export the pdf file
-            pages:
-              type: array
-              description: Slides Pages
-              items:
-                type: object
-                properties:
-                  position:
-                    type: number
-                    description: Slide Page Position
-                  width:
-                    type: number
-                    description: 'Slide Width, unit: pt'
-                  height:
-                    type: number
-                    description: 'Slide Height, unit: pt'
-    SpecialEffectsVideosAgentRequest:
-      type: object
-      properties:
-        agent_id:
-          type: string
-          description: 'Agent ID: `vidu_template_agent`.'
-          enum:
-          - vidu_template_agent
-        request_id:
-          type: string
-          description: User-defined unique ID; used to distinguish requests. Auto-generated if omitted.
-        messages:
-          type: array
-          description: Session message body.
-          items:
-            type: object
-            properties:
-              role:
-                type: string
-                description: 'User input role: `user`'
-                example: user
-                default: user
-                enum:
-                - user
-              content:
-                type: array
-                description: Content list.
-                items:
-                  oneOf:
-                  - title: text
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        description: Specifies that this content is text.
-                        enum:
-                        - text
-                      text:
-                        type: string
-                        description: User text input.
-                    required:
-                    - type
-                    - text
-                  - title: image_url
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        description: Specifies that this content is an image URL.
-                        enum:
-                        - image_url
-                      image_url:
-                        type: string
-                        format: uri
-                        description: Image URL input.
-                    required:
-                    - type
-                    - image_url
-            required:
-            - role
-            - content
-        custom_variables:
-          type: object
-          description: Agent extension parameters.
-          properties:
-            template:
-              type: string
-              description: 'Effect template: `french_kiss`, `bodyshake`, or `sexy_me`.'
-              enum:
-              - french_kiss
-              - bodyshake
-              - sexy_me
-          required:
-          - template
-      required:
-      - agent_id
-      - messages
-    GlmSlideAgentConversationResponse:
-      type: object
-      properties:
-        conversation_id:
-          type: string
-          description: Conversation ID
-        agent_id:
-          type: string
-          description: Agent ID
-        choices:
-          type: array
-          description: Agent output.
-          items:
-            type: object
-            properties:
-              message:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    role:
-                      type: string
-                      description: 'Role: fixed as `assistant`.'
-                    content:
-                      type: array
-                      description: Content metadata
-                      items:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: 'Response Content type: file_url、image_url'
-                          tag_cn:
-                            type: string
-                            description: CN Tag.
-                          tag_en:
-                            type: string
-                            description: EN Tag.
-                          file_url:
-                            type: string
-                            description: Output file_url content when type is file_url
-                          image_url:
-                            type: string
-                            description: Output image_url content when type is image_url
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Error message.
-    CommonAgentResultResponse:
-      type: object
-      properties:
-        status:
-          type: string
-          description: '`pending` (processing), `success` (completed), `failed` (failed).'
-        agent_id:
-          type: string
-          description: Agent ID
-        async_id:
-          type: string
-          description: Asynchronous task ID.
-        choices:
-          type: array
-          description: Agent output.
-          items:
-            type: object
-            properties:
-              index:
-                type: integer
-                description: Result index.
-              finish_reason:
-                type: string
-                description: Reason for model inference termination. Can be ‘stop’, ‘tool_calls’, ‘length’, ‘sensitive’, or ‘network_error’.
-              message:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    role:
-                      type: string
-                      description: 'Role: fixed as `assistant`.'
-                    content:
-                      type: array
-                      description: Video file metadata
-                      items:
-                        type: object
-                        properties:
-                          type:
-                            type: string
-                            description: 'object type: `video_url`.'
-                          video_url:
-                            type: string
-                            description: MP4 video URL.
   parameters:
     AcceptLanguage:
       name: Accept-Language

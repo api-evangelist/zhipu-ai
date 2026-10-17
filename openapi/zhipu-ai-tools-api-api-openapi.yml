@@ -51,20 +51,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      required:
-      - code
-      - message
-      type: object
-      description: The request has failed.
-      properties:
-        code:
-          type: integer
-          format: int32
-          description: Error code.
-        message:
-          type: string
-          description: Error message.
     ReaderRequest:
       type: object
       properties:
@@ -105,6 +91,20 @@ components:
           default: false
       required:
       - url
+    Error:
+      required:
+      - code
+      - message
+      type: object
+      description: The request has failed.
+      properties:
+        code:
+          type: integer
+          format: int32
+          description: Error code.
+        message:
+          type: string
+          description: Error message.
     ReaderResponse:
       type: object
       properties:
