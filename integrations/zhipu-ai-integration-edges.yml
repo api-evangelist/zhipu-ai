@@ -1,4 +1,23 @@
 edges:
+- partner_name: LlamaIndex
+  partner: llamaindex
+  partner_match: framework
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: system-coverage
+  evidence: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/embeddings/llama-index-embeddings-zhipuai
+  coverage_role:
+  - embeddings
+  framework_signals:
+    packages:
+    - llama-index-embeddings-zhipuai
+    roles:
+    - embeddings
+    vendor_domain: zhipuai.cn
+  matched_by: verified-domain-table
+  detected_by: sweep-rag-vector.py
+  first_seen: '2026-10-15'
 - partner_name: OpenRouter
   partner: openrouter
   partner_match: router
@@ -86,25 +105,111 @@ edges:
   matched_by: verified-token-table
   detected_by: sweep-model-routing.py
   first_seen: '2026-10-13'
-- partner_name: LlamaIndex
-  partner: llamaindex
-  partner_match: framework
-  channel: partner-built
+- partner_name: Agent Skills (own GitHub org)
+  partner: null
+  partner_match: register
+  type: register
+  direction: provider-built
+  category: Agent Skills package
+  evidence: https://github.com/zai-org/GLM-skills
+  channel: provider-built
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: own-repo
+  degree: skill-repo
+  report_only: true
+  agent_skills:
+    org: zai-org
+    current: true
+    repos:
+    - repo: zai-org/GLM-skills
+      archived: false
+      lapsed: false
+      pushed: '2026-04-15'
+    - repo: zai-org/GLM-V
+      archived: false
+      lapsed: false
+      pushed: '2026-10-17'
+    - repo: zai-org/zai-coding-plugins
+      archived: false
+      lapsed: false
+      pushed: '2026-02-22'
+  contract_reference:
+    register: 'provider''s own GitHub org (GitHub REST API: repo + git tree holds SKILL.md)'
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-repo
+    matched_org: zai-org
+    matched_by: org-profile-domain:zhipuai.cn
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: claude-plugins.dev
+  partner: null
+  partner_match: register
+  type: register
   direction: partner-built
-  type: coverage
-  relationship: system-coverage
-  evidence: https://github.com/run-llama/llama_index/tree/main/llama-index-integrations/embeddings/llama-index-embeddings-zhipuai
-  coverage_role:
-  - embeddings
-  framework_signals:
-    packages:
-    - llama-index-embeddings-zhipuai
-    roles:
-    - embeddings
-    vendor_domain: zhipuai.cn
-  matched_by: verified-domain-table
-  detected_by: sweep-rag-vector.py
-  first_seen: '2026-10-15'
+  category: Agent Skills register
+  evidence: https://claude-plugins.dev/skills/@zai-org/zai-coding-plugins
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - zai-org/zai-coding-plugins
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: claude-plugins.dev (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: zai-org
+    matched_by: org-profile-domain:zhipuai.cn
+    sample_skills:
+    - case-feedback-skill
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
+- partner_name: SkillsMP (skillsmp.com)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  category: Agent Skills register
+  evidence: https://skillsmp.com/creators/zai-org/glm-skills
+  channel: standard-directory
+  relationship: compatible
+  shape: agent-skills
+  evidence_kind: register-listing
+  degree: listed
+  report_only: true
+  agent_skills_register:
+    repos:
+    - zai-org
+    - zai-org/glm-skills
+    - zai-org/glm-v
+    repo_verified: true
+    signal_note: the provider's own-org repos the register lists; skill / install counts never read
+  contract_reference:
+    register: SkillsMP (skillsmp.com) (public sitemap / list)
+    spec_file: null
+    standard: Agent Skills (agentskills.io)
+    role: agent-skills-listing
+    matched_org: zai-org
+    matched_by: org-profile-domain:zhipuai.cn
+    sample_skills:
+    - skills-glmv-caption
+    - skills-glmv-stock-analyst
+    detected_by: sweep-agent-skills.py
+    detected: '2026-10-20'
+  detected_by: sweep-agent-skills.py
+  first_seen: '2026-10-20'
 generated: '2026-10-13'
 method: searched
 checked:
@@ -113,3 +218,11 @@ checked:
 - https://github.com/Portkey-AI/gateway/tree/main/src/providers
 - https://github.com/run-llama/llama_index/tree/main/llama-index-integrations
 - https://openrouter.ai/api/v1/models
+- https://api.github.com
+- https://claude-plugins.dev/sitemap.xml
+- https://github.com/VoltAgent/awesome-agent-skills
+- https://officialskills.sh/sitemap.xml
+- https://skillsmp.com/sitemap.xml
+- https://www.skills.sh/sitemap.xml
+source:
+- https://www.skills.sh/sitemap.xml
