@@ -171,3 +171,9 @@ components:
       type: http
       scheme: bearer
       description: 'Use the following format for authentication: Bearer [<your api key>](https://z.ai/manage-apikey/apikey-list)'
+x-provenance:
+  method: harvested
+  publisher: Zhipu AI
+  source: https://docs.z.ai/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
