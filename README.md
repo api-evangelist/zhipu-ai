@@ -1,4 +1,4 @@
-# Zhipu AI (zhipu-ai)
+# Zhipu AI
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,130 @@
 
 Zhipu AI (Z.ai / BigModel) is a Chinese AI research lab and the developer of the GLM (General Language Model) family. The Z.ai open platform exposes chat completions, vision, image generation, video generation, web search, audio transcription, embeddings, fine-tuning, and agent APIs across the GLM-5, GLM-4.7, GLM-4.6, and GLM-4.5 model series.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/zhipu-ai/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/zhipu-ai/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · LLM · Inference · GLM · ChatGLM · Multi-Modal · Foundation Models
 
-## Tags
+## Zhipu AI on APIs.io
 
-- AI
-- LLM
-- Inference
-- GLM
-- ChatGLM
-- Multimodal
+Everything profiled for Zhipu AI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zhipu-ai/](https://apis.io/providers/zhipu-ai/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-19
+- [Zhipu AI Agents API](https://apis.io/apis/zhipu-ai/zhipu-ai-agents-api/) — The Agents API from Zhipu AI — 3 operation(s) for agents.
+- [Zhipu AI Tools API](https://apis.io/apis/zhipu-ai/zhipu-ai-tools-api-api/) — The Tools API API from Zhipu AI — 1 operation(s) for tools api.
+- [Zhipu AI Paa S API](https://apis.io/apis/zhipu-ai/zhipu-ai-paa-s-api/) — The Paa S API from Zhipu AI — 10 operation(s) for paa s.
 
-## APIs
+### Published properties
 
-### Z.ai Open Platform API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-OpenAI-compatible chat completions plus vision, image, video, web search, audio, embeddings, fine-tuning, and agent endpoints. International base URL https://api.z.ai/api; legacy China base URL https://open.bigmodel.cn/api/paas/v4.
+#### MCP servers (1)
 
-- **Human URL:** [https://docs.z.ai/api-reference/llm/chat-completion](https://docs.z.ai/api-reference/llm/chat-completion)
-- **Base URL:** `https://api.z.ai/api`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [zhipu-ai](https://apis.io/servers/zhipu-ai/zhipu-ai/)
 
-- AI
-- LLM
-- Chat Completions
-- Vision
-- Image Generation
-- Video Generation
-- Embeddings
-- Fine Tuning
-- Web Search
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.z.ai)
-- [OpenAPI](openapi/zhipu-ai-openapi.json) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/zhipu-ai.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/zhipu-ai.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Sign Up](https://z.ai)
-- [Pricing](https://docs.z.ai/guides/overview/pricing)
-- [Legacy Base U R L](https://open.bigmodel.cn/api/paas/v4)
+- [Zhipu Ai Agentic Access](https://apis.io/agentic-access/zhipu-ai/zhipu-ai-agentic-access/)
 
-## Common Properties
+#### Collections (4)
 
-- [GitHub Organization](https://github.com/zai-org)
-- [LinkedIn](https://www.linkedin.com/company/zhipuai)
+Postman and Open Collection request collections.
+
+- [Z.AI API](https://apis.io/collections/zhipu-ai/open-zhipu-ai/)
+- [Z.AI Agents API](https://apis.io/collections/zhipu-ai/open-zhipu-ai-agents-api/)
+- [Z.AI Agents Paas API](https://apis.io/collections/zhipu-ai/open-zhipu-ai-paas-api/)
+- [Z.AI Agents Tools API API](https://apis.io/collections/zhipu-ai/open-zhipu-ai-tools-api-api/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Zhipu Ai Authentication](https://apis.io/security/zhipu-ai/zhipu-ai-authentication/)
+- [Zhipu Ai Domain Security](https://apis.io/security/zhipu-ai/zhipu-ai-domain-security/)
+- [Zhipu Ai Vulnerability Disclosure](https://apis.io/security/zhipu-ai/zhipu-ai-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Zhipu Ai Plans Pricing](https://apis.io/plans/zhipu-ai/zhipu-ai-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Zhipu Ai Rate Limits](https://apis.io/rate-limits/zhipu-ai/zhipu-ai-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Zhipu Ai Finops](https://apis.io/finops/zhipu-ai/zhipu-ai-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.zhipuai.cn/)
-- [Alternate Website](https://z.ai)
 - [Documentation](https://docs.z.ai)
-- [Plans](plans/zhipu-ai-plans-pricing.yml)
-- [Rate Limits](rate-limits/zhipu-ai-rate-limits.yml)
-- [Fin Ops](finops/zhipu-ai-finops.yml)
-- [Integrations](https://www.zhipuai.cn/integrations)
-- [L L Ms Txt](https://docs.z.ai/llms.txt)
+- [Pricing](https://docs.z.ai/guides/overview/pricing)
+- [Blog](https://www.zhipuai.cn/blog)
+- [GitHub](https://github.com/zai-org)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 37.2** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 48.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 55.3 |
+
+**Agent readiness 33.0** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.4** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/zhipu-ai/](https://apis.io/providers/zhipu-ai/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zhipu AI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zhipu-ai/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
